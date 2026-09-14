@@ -75,10 +75,10 @@
   reduced.addEventListener('change',()=>{if(reduced.matches){paused=true;setPauseLabel();}});
   const stage=document.querySelector('.offer-stage');let start=null;
   stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')start={x:e.clientX,y:e.clientY};});
-  stage.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)showOffer(activeOffer+(dx<0?1:-1));});
+  stage.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)selectOffer(activeOffer+(dx<0?1:-1));});
   stage.addEventListener('pointercancel',()=>{start=null;});
   document.querySelector('.carousel-tabs').removeAttribute('role');
   const offerControls=document.querySelector('.carousel-controls');
-  offerControls.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();showOffer(activeOffer+(e.key==='ArrowRight'?1:-1));}});
+  offerControls.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();selectOffer(activeOffer+(e.key==='ArrowRight'?1:-1));}});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}});
 })();
