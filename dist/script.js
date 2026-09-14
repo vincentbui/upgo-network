@@ -6,6 +6,11 @@ const offers = [
   { name: "ActiveMen Pro", category: "PERSONAL CARE", rank: "TOP 5", geo: "🌏 Đông Nam Á", image: "/offer-05.png" }
 ];
 
+offers.forEach((offer) => {
+  const asset = new Image();
+  asset.src = offer.image;
+});
+
 let activeOffer = 0;
 const tabs = [...document.querySelectorAll(".carousel-tabs button")];
 const image = document.querySelector("#offer-image");
@@ -15,14 +20,14 @@ const rank = document.querySelector("#offer-rank");
 const geo = document.querySelector("#offer-geo");
 const watermark = document.querySelector(".rank-watermark");
 const progress = document.querySelector(".progress i");
+const offerStage = document.querySelector(".offer-stage");
 
 let offerTransition;
 function showOffer(index) {
   window.clearTimeout(offerTransition);
   activeOffer = (index + offers.length) % offers.length;
   const offer = offers[activeOffer];
-  image.style.opacity = "0";
-  image.style.transform = "translateY(8px)";
+  offerStage.classList.add("is-switching");
   offerTransition = window.setTimeout(() => {
     image.src = offer.image;
     image.alt = `Mockup minh họa ${offer.name}`;
@@ -33,9 +38,8 @@ function showOffer(index) {
     watermark.textContent = String(activeOffer + 1).padStart(2, "0");
     tabs.forEach((tab, i) => { tab.classList.toggle("active", i === activeOffer); tab.setAttribute('aria-pressed', String(i === activeOffer)); });
     progress.style.width = `${(activeOffer + 1) * 20}%`;
-    image.style.opacity = "1";
-    image.style.transform = "translateY(0)";
-  }, 160);
+    window.requestAnimationFrame(() => offerStage.classList.remove("is-switching"));
+  }, 260);
 }
 
 let offerAutoplay;

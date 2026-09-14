@@ -56,3 +56,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 /* Ticker is explicitly requested to stay live, even when OS motion is reduced. */
 @media(prefers-reduced-motion:reduce){.ticker{overflow:hidden}.ticker .ticker-track.ticker-ready{animation:ticker-loop var(--ticker-duration,45s) linear infinite!important;will-change:transform}.ticker .ticker-track:not(.ticker-ready){animation:ticker 60s linear infinite!important}.ticker .ticker-track>[aria-hidden=true]{display:flex}}
 .ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused!important}
+
+/* Smooth crossfade between autoplaying offers. */
+.offer-image-wrap img,.rank-watermark,.offer-info>*{opacity:1;transform:translateY(0);transition:opacity .34s ease,transform .42s cubic-bezier(.2,.7,.2,1)}
+.offer-info>*:nth-child(2){transition-delay:.025s}.offer-info>*:nth-child(3){transition-delay:.05s}.offer-info>*:nth-child(4){transition-delay:.075s}.offer-info>*:nth-child(5){transition-delay:.1s}
+.offer-stage.is-switching .offer-image-wrap img,.offer-stage.is-switching .rank-watermark,.offer-stage.is-switching .offer-info>*{opacity:0;transform:translateY(9px);transition-delay:0s}
+@media(prefers-reduced-motion:reduce){.offer-image-wrap img,.rank-watermark,.offer-info>*{transition:opacity .34s ease,transform .42s cubic-bezier(.2,.7,.2,1)!important}}
