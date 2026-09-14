@@ -25,3 +25,5 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 @keyframes event-enter{from{opacity:.5;translate:0 7px}to{opacity:1;translate:0 0}}
 .offer-stage{touch-action:pan-y}.ticker:focus-within .ticker-track{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal-ready{opacity:1;translate:none}.hero-visual{translate:none}.insight-card:hover{transform:none}}
+/* Ticker is explicitly requested to stay live, even when OS motion is reduced. */
+@media(prefers-reduced-motion:reduce){.ticker{overflow:hidden}.ticker .ticker-track.ticker-ready{animation:ticker-loop var(--ticker-duration,45s) linear infinite!important;will-change:transform}.ticker .ticker-track:not(.ticker-ready){animation:ticker 60s linear infinite!important}.ticker .ticker-track>[aria-hidden=true]{display:flex}}
