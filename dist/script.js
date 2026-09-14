@@ -38,13 +38,11 @@ function showOffer(index) {
   }, 160);
 }
 
-const offerCarousel = document.querySelector(".offer-carousel");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let offerAutoplay;
 
 function startOfferAutoplay() {
   window.clearTimeout(offerAutoplay);
-  if (reducedMotion.matches || document.hidden) return;
+  if (document.hidden) return;
   offerAutoplay = window.setTimeout(() => {
     showOffer(activeOffer + 1);
     startOfferAutoplay();
@@ -60,17 +58,10 @@ tabs.forEach((tab) => tab.addEventListener("click", () => selectOffer(Number(tab
 document.querySelector("#prev-offer").addEventListener("click", () => selectOffer(activeOffer - 1));
 document.querySelector("#next-offer").addEventListener("click", () => selectOffer(activeOffer + 1));
 
-offerCarousel.addEventListener("pointerenter", () => window.clearTimeout(offerAutoplay));
-offerCarousel.addEventListener("pointerleave", startOfferAutoplay);
-offerCarousel.addEventListener("focusin", () => window.clearTimeout(offerAutoplay));
-offerCarousel.addEventListener("focusout", (event) => {
-  if (!offerCarousel.contains(event.relatedTarget)) startOfferAutoplay();
-});
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) window.clearTimeout(offerAutoplay);
   else startOfferAutoplay();
 });
-reducedMotion.addEventListener("change", startOfferAutoplay);
 startOfferAutoplay();
 
 const menuToggle = document.querySelector(".menu-toggle");
