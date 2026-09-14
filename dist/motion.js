@@ -10,7 +10,7 @@
     if (!distance) return;
     const repeats = Math.ceil(ticker.clientWidth / distance) + 1;
     for (let i=0;i<repeats;i++) originalItems.forEach(el => { const clone=el.cloneNode(true);clone.setAttribute('aria-hidden','true');track.append(clone); });
-    track.style.setProperty('--ticker-distance',`${distance}px`);
+    track.style.setProperty('--ticker-distance',`-${distance}px`);
     track.style.setProperty('--ticker-duration',`${distance / 40}s`);
     track.classList.add('ticker-ready');
   }

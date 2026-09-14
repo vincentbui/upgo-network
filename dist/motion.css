@@ -1,8 +1,8 @@
 section[id]{scroll-margin-top:110px}
-.ticker-track{animation:none}
+.ticker-track{animation:ticker 42s linear infinite}
 .ticker-track.ticker-ready{animation:ticker-loop var(--ticker-duration,45s) linear infinite;will-change:transform}
 .ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
-@keyframes ticker-loop{from{transform:translateX(0)}to{transform:translateX(calc(-1 * var(--ticker-distance,1800px)))}}
+@keyframes ticker-loop{from{transform:translateX(0)}to{transform:translateX(var(--ticker-distance,-1800px))}}
 @media(prefers-reduced-motion:reduce){.ticker{overflow-x:auto}.ticker-track.ticker-ready{animation:none!important;transform:none;will-change:auto}.ticker-track>[aria-hidden=true]{display:none}}
 /* Layered brand lighting, confined to the Top Offers section. */
 .offers{position:relative;isolation:isolate;background:radial-gradient(ellipse at 4% 18%,#1937f759 0,transparent 48%),radial-gradient(ellipse at 95% 72%,#1937f747 0,transparent 44%),radial-gradient(ellipse at 70% 0%,#536bff24 0,transparent 38%),linear-gradient(135deg,#101a40 0%,#080c1e 48%,#121b3c 100%)}
