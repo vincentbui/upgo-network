@@ -1,0 +1,15 @@
+section[id]{scroll-margin-top:110px}
+a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5px}
+.hero .eyebrow{color:#fff}
+.reveal-ready{opacity:0;translate:0 25px;transition:opacity .65s ease,translate .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.reveal-ready.is-visible{opacity:1;translate:0 0}
+.hero-visual{translate:var(--hero-x,0px) var(--hero-y,0px);transition:translate .3s ease-out}
+.button span{transition:transform .25s}.button:hover span{transform:translate(3px,-3px)}
+.desktop-nav a{position:relative}.desktop-nav a:after{content:'';position:absolute;bottom:-10px;left:0;right:0;height:2px;background:#1937f7;transform:scaleX(0);transform-origin:left;transition:transform .25s}.desktop-nav a[aria-current]:after{transform:scaleX(1)}
+.advantage-grid article{position:relative;overflow:hidden}.advantage-grid article:after{content:'';position:absolute;bottom:0;left:0;height:3px;width:100%;background:#1937f7;transform:scaleX(0);transform-origin:left;transition:transform .3s}.advantage-grid article:hover:after{transform:scaleX(1)}
+.insight-card{transition:transform .3s,box-shadow .3s}.insight-card:hover{transform:translateY(-7px);box-shadow:0 18px 35px #10132220}
+.event-controls{display:flex;gap:8px;align-items:center;margin-top:18px}.event-controls button{border:1px solid #1937f740;background:transparent;color:#1937f7;border-radius:8px;min-width:44px;min-height:44px;cursor:pointer;font-weight:700}.event-controls button[aria-pressed=true]{background:#1937f7;color:#fff}.event-controls .event-pause{margin-left:6px;padding:0 12px;font-size:12px}
+.event-banner{min-height:295px}.event-copy h2{min-height:2.3em}.event-copy p{min-height:3.2em}.event-copy.content-enter{animation:event-enter .4s ease}.event-label span:last-child{align-self:center}.event-art>span{transition:transform .4s}.event-banner:hover .event-art>span{transform:rotate(0deg) scale(1.08)}
+@keyframes event-enter{from{opacity:.5;translate:0 7px}to{opacity:1;translate:0 0}}
+.offer-stage{touch-action:pan-y}.ticker:focus-within .ticker-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal-ready{opacity:1;translate:none}.hero-visual{translate:none}.insight-card:hover{transform:none}}

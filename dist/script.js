@@ -16,12 +16,14 @@ const geo = document.querySelector("#offer-geo");
 const watermark = document.querySelector(".rank-watermark");
 const progress = document.querySelector(".progress i");
 
+let offerTransition;
 function showOffer(index) {
+  window.clearTimeout(offerTransition);
   activeOffer = (index + offers.length) % offers.length;
   const offer = offers[activeOffer];
   image.style.opacity = "0";
   image.style.transform = "translateY(8px)";
-  window.setTimeout(() => {
+  offerTransition = window.setTimeout(() => {
     image.src = offer.image;
     image.alt = `Mockup minh họa ${offer.name}`;
     name.textContent = offer.name;
@@ -29,7 +31,7 @@ function showOffer(index) {
     rank.textContent = offer.rank;
     geo.textContent = offer.geo;
     watermark.textContent = String(activeOffer + 1).padStart(2, "0");
-    tabs.forEach((tab, i) => tab.classList.toggle("active", i === activeOffer));
+    tabs.forEach((tab, i) => { tab.classList.toggle("active", i === activeOffer); tab.setAttribute('aria-pressed', String(i === activeOffer)); });
     progress.style.width = `${(activeOffer + 1) * 20}%`;
     image.style.opacity = "1";
     image.style.transform = "translateY(0)";
