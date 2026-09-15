@@ -56,15 +56,13 @@
   const controls = document.createElement('div'); controls.className='event-controls'; controls.setAttribute('aria-label','Điều khiển banner');
   let index=0, paused=reduced.matches, hovered=false, focused=false;
   const buttons=events.map((event,i) => {
-    const b=document.createElement('button');b.type='button';b.textContent=String(i+1).padStart(2,'0');b.setAttribute('aria-label',`Banner ${i+1}: ${event[0]}`);
+    const b=document.createElement('button');b.type='button';b.className='event-dot';b.setAttribute('aria-label',`Banner ${i+1}: ${event[0]}`);
     b.addEventListener('click',()=>{render(i);});controls.append(b);return b;
   });
-  const pause=document.createElement('button');pause.type='button';pause.className='event-pause';controls.append(pause);copy.append(controls);
-  function setPauseLabel(){pause.textContent=paused?'Phát tự động':'Tạm dừng';pause.setAttribute('aria-pressed',String(paused));}
-  pause.addEventListener('click',()=>{paused=!paused;setPauseLabel();});setPauseLabel();
+  copy.append(controls);
   function render(i){
     index=i;copy.querySelector('h2').textContent=events[i][1];copy.querySelector('p').textContent=events[i][2];
-    const labels=copy.querySelectorAll('.event-label span');labels[0].textContent=events[i][0];labels[1].textContent=`${String(i+1).padStart(2,'0')} / 03 · MINH HỌA`;
+    const labels=copy.querySelectorAll('.event-label span');labels[0].textContent=events[i][0];labels[1].textContent=`${String(i+1).padStart(2,'0')} / 03`;
     buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
     copy.classList.remove('content-enter');requestAnimationFrame(()=>copy.classList.add('content-enter'));
   }
@@ -72,7 +70,7 @@
   banner.addEventListener('pointerenter',()=>{hovered=true;});banner.addEventListener('pointerleave',()=>{hovered=false;});
   banner.addEventListener('focusin',()=>{focused=true;});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);});
   window.setInterval(()=>{if(!paused&&!hovered&&!focused&&!document.hidden&&!reduced.matches)render((index+1)%events.length);},6500);
-  reduced.addEventListener('change',()=>{if(reduced.matches){paused=true;setPauseLabel();}});
+  reduced.addEventListener('change',()=>{paused=reduced.matches;});
   const stage=document.querySelector('.offer-stage');let start=null;
   stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')start={x:e.clientX,y:e.clientY};});
   stage.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)selectOffer(activeOffer+(dx<0?1:-1));});
