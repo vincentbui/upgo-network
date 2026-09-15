@@ -62,3 +62,30 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 .offer-info>*:nth-child(2){transition-delay:.025s}.offer-info>*:nth-child(3){transition-delay:.05s}.offer-info>*:nth-child(4){transition-delay:.075s}.offer-info>*:nth-child(5){transition-delay:.1s}
 .offer-stage.is-switching .offer-image-wrap img,.offer-stage.is-switching .rank-watermark,.offer-stage.is-switching .offer-info>*{opacity:0;transform:translateY(9px);transition-delay:0s}
 @media(prefers-reduced-motion:reduce){.offer-image-wrap img,.rank-watermark,.offer-info>*{transition:opacity .34s ease,transform .42s cubic-bezier(.2,.7,.2,1)!important}}
+
+/* Compact event banner + audience-specific entry points. */
+.event-banner{min-height:220px;grid-template-columns:1.45fr .55fr}
+.event-copy{padding:27px 36px;max-width:870px}
+.event-copy h2{min-height:0;font-size:clamp(25px,2.15vw,34px);margin:12px 0 7px;line-height:1.08}
+.event-copy p{min-height:0;max-width:720px;margin:0 0 9px;font-size:14px;line-height:1.5}
+.event-art{min-height:220px}
+.event-art>span{font-size:96px}
+.event-controls{position:absolute;right:28px;bottom:22px;z-index:3;margin:0}
+.event-controls button{min-width:36px;min-height:36px}
+.event-controls .event-pause{min-height:36px}
+.audience-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;margin-bottom:24px}
+.audience-card{min-height:108px;padding:20px 24px 20px 28px;border:1px solid #e0e4f0;border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:22px;overflow:hidden;position:relative;transition:transform .28s,box-shadow .28s,border-color .28s}
+.audience-card:before{content:'';position:absolute;width:170px;height:170px;border-radius:50%;right:-90px;top:-105px;background:radial-gradient(circle,rgba(25,55,247,.13),transparent 68%);pointer-events:none}
+.audience-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(25,55,247,.12);border-color:rgba(25,55,247,.28)}
+.audience-card p{margin:0 0 5px;font:700 11px/1.2 "Space Grotesk",sans-serif;letter-spacing:.13em;color:#1937f7}
+.audience-card h2{margin:0;font:650 clamp(19px,1.55vw,24px)/1.15 "Space Grotesk",sans-serif;letter-spacing:-.035em}
+.audience-brand{background:linear-gradient(110deg,#f4f6ff 0%,#fff 62%,#fff9df 100%)}
+.audience-publisher{color:#fff;border-color:#263dbe;background:radial-gradient(circle at 84% 20%,rgba(83,107,255,.55),transparent 38%),linear-gradient(115deg,#101a43 0%,#1937f7 145%)}
+.audience-publisher:before{background:radial-gradient(circle,rgba(254,199,11,.16),transparent 68%)}
+.audience-publisher p{color:#fec70b}
+.audience-button{position:relative;z-index:1;flex:0 0 auto;min-height:50px;padding:0 20px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;background:#111a51;color:#fff;font:700 13px/1 "Space Grotesk",sans-serif;transition:transform .25s,background .25s,box-shadow .25s}
+.audience-publisher .audience-button{background:#fff;color:#11152d}
+.audience-button:hover{transform:translateY(-2px);background:#1937f7;box-shadow:0 10px 24px rgba(25,55,247,.22)}
+.audience-publisher .audience-button:hover{background:#fec70b;color:#11152d}
+.audience-button span{transition:transform .25s}.audience-button:hover span{transform:translate(2px,-2px)}
+@media(max-width:760px){.event-banner{min-height:0}.event-copy{padding:24px 22px 78px}.event-copy h2{font-size:27px}.event-copy p{font-size:14px}.event-controls{left:22px;right:auto;bottom:20px}.audience-actions{grid-template-columns:1fr;gap:10px;margin-bottom:14px}.audience-card{min-height:116px;padding:20px;align-items:flex-end}.audience-card h2{font-size:20px}.audience-button{min-height:44px;padding:0 14px;font-size:12px}}
