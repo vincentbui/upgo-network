@@ -59,11 +59,13 @@
     const b=document.createElement('button');b.type='button';b.className='event-dot';b.setAttribute('aria-label',`Banner ${i+1}: ${event[0]}`);
     b.addEventListener('click',()=>{render(i);});controls.append(b);return b;
   });
-  function arrow(direction,label,symbol){
-    const button=document.createElement('button');button.type='button';button.className='event-arrow';button.textContent=symbol;button.setAttribute('aria-label',label);
+  function arrow(direction,label){
+    const button=document.createElement('button');button.type='button';button.className='event-arrow';button.setAttribute('aria-label',label);
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',direction<0?'M15 6l-6 6 6 6':'M9 6l6 6-6 6');svg.append(path);button.append(svg);
     button.addEventListener('click',()=>render(index+direction));return button;
   }
-  controls.prepend(arrow(-1,'Banner trước','‹'));controls.append(arrow(1,'Banner tiếp theo','›'));banner.append(controls);
+  controls.prepend(arrow(-1,'Banner trước'));controls.append(arrow(1,'Banner tiếp theo'));banner.append(controls);
   controls.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();render(index+(e.key==='ArrowRight'?1:-1));}});
   const visuals=[...banner.querySelectorAll('.event-visual')];
   const ready=visuals.map(img=>img.decode ? img.decode().catch(()=>{}) : Promise.resolve());
