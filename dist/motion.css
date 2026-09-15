@@ -108,8 +108,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 /* Editorial event slider: compact copy, full visual, persistent navigation. */
 .hero-symbol{position:absolute;left:50%;top:48%;width:clamp(190px,21vw,290px);transform:translate(-50%,-50%);transform-style:preserve-3d;perspective:900px;isolation:isolate}
 .hero-symbol:before{content:'';position:absolute;inset:-26%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,#e8efff99 0%,#adc2ff44 35%,#ffffff00 68%);animation:u-halo 5s ease-in-out infinite}
-.hero-symbol img{display:block;width:100%;height:auto;transform-style:preserve-3d;backface-visibility:hidden;will-change:transform}
-.hero-symbol:after{content:'';position:absolute;inset:0;z-index:3;background:linear-gradient(110deg,transparent 25%,#ffffff99 45%,transparent 60%);background-size:300% 100%;mask:url('/upgo-symbol.png') center/contain no-repeat;pointer-events:none;animation:u-sheen 6s ease-in-out infinite;mix-blend-mode:screen}
+.hero-symbol .u-stage{position:relative;width:100%;transform-style:preserve-3d;animation:u-stage-float 6s ease-in-out infinite alternate;will-change:transform}
+.hero-symbol img{display:block;width:100%;height:auto;backface-visibility:hidden}
+.hero-symbol .u-stage:after{content:'';position:absolute;inset:0;z-index:6;transform:translateZ(20px);background:linear-gradient(110deg,transparent 25%,#ffffff99 45%,transparent 60%);background-size:300% 100%;mask:url('/upgo-symbol.png') center/contain no-repeat;pointer-events:none;animation:u-sheen 6s ease-in-out infinite;mix-blend-mode:screen}
 @keyframes u-halo{0%,100%{opacity:.65;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
 @keyframes u-sheen{0%,20%{background-position:150% 0;opacity:0}35%,65%{opacity:.55}80%,100%{background-position:-50% 0;opacity:0}}
 .event-banner{grid-template-columns:1.1fr 1fr;min-height:260px;background:radial-gradient(ellipse at 5% 0%,#1937f744,transparent 65%),#101a40;color:#fff;border:1px solid #536bff44;isolation:isolate}
@@ -134,13 +135,16 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 @media(min-width:761px){.event-banner{grid-template-columns:1.3fr 1fr}}
 @media(max-width:520px){.event-banner .event-copy h2{min-height:0}}
 
-/* Centered navigation icons and a floating dual-layer 3D brand symbol. */
+/* Centered navigation icons and a unified floating dual-layer 3D brand symbol. */
 .event-controls .event-arrow svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.hero-symbol .u-front{position:relative;z-index:2;filter:brightness(0) invert(1) drop-shadow(2px 3px 0 #f0b914) drop-shadow(4px 6px 0 #9b6e00) drop-shadow(0 0 9px #3975ff99) drop-shadow(0 20px 20px #07145588);animation:u-front-3d 6s ease-in-out infinite alternate}
-.hero-symbol img.u-echo{position:absolute;inset:0;z-index:1;opacity:1;filter:drop-shadow(0 0 10px #2457ff88);animation:u-back-3d 6s ease-in-out infinite alternate}
-@keyframes u-front-3d{from{transform:translateY(5px) translateZ(14px) rotateX(-3deg) rotateY(-8deg)}to{transform:translateY(-7px) translateZ(14px) rotateX(3deg) rotateY(8deg)}}
-@keyframes u-back-3d{from{transform:translate(18px,8px) translateZ(-24px) rotateX(-3deg) rotateY(-8deg)}to{transform:translate(26px,-1px) translateZ(-24px) rotateX(3deg) rotateY(8deg)}}
-@media(prefers-reduced-motion:reduce){.hero-symbol .u-front,.hero-symbol img.u-echo{animation:none}.hero-symbol .u-front{transform:translateZ(14px)}.hero-symbol img.u-echo{transform:translate(16px,5px) translateZ(-24px)}}
+.hero-symbol .u-front{position:relative;z-index:5;transform:translateZ(18px);filter:brightness(0) invert(1) drop-shadow(0 0 8px #4381ff88) drop-shadow(0 18px 24px #07145599)}
+.hero-symbol .u-back{position:absolute;inset:0;z-index:1;transform:translate(8px,5px) translateZ(-24px);filter:drop-shadow(0 0 12px #2457ff88)}
+.hero-symbol .u-depth{position:absolute;inset:0;display:block;mask:url('/upgo-symbol.png') center/contain no-repeat;background:linear-gradient(115deg,#704d00 0%,#fec70b 48%,#8c6300 100%);filter:drop-shadow(0 0 3px #fec70b55);backface-visibility:hidden}
+.hero-symbol .depth-one{z-index:2;transform:translate(2px,2px) translateZ(12px)}
+.hero-symbol .depth-two{z-index:3;transform:translate(4px,3px) translateZ(4px);filter:brightness(.82)}
+.hero-symbol .depth-three{z-index:4;transform:translate(6px,4px) translateZ(-8px);filter:brightness(.62)}
+@keyframes u-stage-float{from{transform:translateY(6px) rotateX(-3deg) rotateY(-8deg)}to{transform:translateY(-8px) rotateX(3deg) rotateY(8deg)}}
+@media(prefers-reduced-motion:reduce){.hero-symbol .u-stage{animation:none;transform:rotateX(1deg) rotateY(4deg)}}
 .insight-card{padding:0 24px 24px;min-height:460px}
 .insight-card:after{display:none}
 .insight-thumb{margin:0 -24px 22px;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;background:#101a40}
