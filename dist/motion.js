@@ -77,19 +77,20 @@
   });
   hero.addEventListener('pointerleave', () => {hero.style.setProperty('--hero-x','0px');hero.style.setProperty('--hero-y','0px');});
   const offersSection=document.querySelector('.offers');
-  if(offersSection&&!reduced.matches){
+  const offerStage=offersSection?.querySelector('.offer-stage');
+  if(offerStage&&!reduced.matches){
     let offerGlowFrame=0;
-    offersSection.addEventListener('pointermove',e=>{
+    offerStage.addEventListener('pointermove',e=>{
       if(e.pointerType!=='mouse')return;
       cancelAnimationFrame(offerGlowFrame);
       offerGlowFrame=requestAnimationFrame(()=>{
-        const box=offersSection.getBoundingClientRect();
-        offersSection.style.setProperty('--offer-glow-x',`${e.clientX-box.left}px`);
-        offersSection.style.setProperty('--offer-glow-y',`${e.clientY-box.top}px`);
-        offersSection.style.setProperty('--offer-glow-opacity','1');
+        const box=offerStage.getBoundingClientRect();
+        offerStage.style.setProperty('--offer-glow-x',`${e.clientX-box.left}px`);
+        offerStage.style.setProperty('--offer-glow-y',`${e.clientY-box.top}px`);
+        offerStage.style.setProperty('--offer-glow-opacity','1');
       });
     });
-    offersSection.addEventListener('pointerleave',()=>offersSection.style.setProperty('--offer-glow-opacity','0'));
+    offerStage.addEventListener('pointerleave',()=>offerStage.style.setProperty('--offer-glow-opacity','0'));
   }
   if ('IntersectionObserver' in window) {
     const nav = new IntersectionObserver(entries => entries.forEach(entry => {
