@@ -137,9 +137,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 /* Centered navigation icons and a floating dual-layer 3D brand symbol. */
 .event-controls .event-arrow svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hero-symbol .u-front{position:relative;z-index:2;filter:brightness(0) invert(1) drop-shadow(2px 3px 0 #f0b914) drop-shadow(4px 6px 0 #9b6e00) drop-shadow(0 0 9px #3975ff99) drop-shadow(0 20px 20px #07145588);animation:u-front-3d 6s ease-in-out infinite alternate}
-.hero-symbol img.u-echo{position:absolute;inset:0;z-index:1;opacity:.98;filter:saturate(1.15) drop-shadow(0 0 10px #2457ff88);animation:u-back-3d 6s ease-in-out infinite alternate}
+.hero-symbol img.u-echo{position:absolute;inset:0;z-index:1;opacity:1;filter:drop-shadow(0 0 10px #2457ff88);animation:u-back-3d 6s ease-in-out infinite alternate}
 @keyframes u-front-3d{from{transform:translateY(5px) translateZ(14px) rotateX(-3deg) rotateY(-8deg)}to{transform:translateY(-7px) translateZ(14px) rotateX(3deg) rotateY(8deg)}}
-@keyframes u-back-3d{from{transform:translate(12px,8px) translateZ(-24px) rotateX(-3deg) rotateY(-8deg)}to{transform:translate(19px,-1px) translateZ(-24px) rotateX(3deg) rotateY(8deg)}}
+@keyframes u-back-3d{from{transform:translate(18px,8px) translateZ(-24px) rotateX(-3deg) rotateY(-8deg)}to{transform:translate(26px,-1px) translateZ(-24px) rotateX(3deg) rotateY(8deg)}}
 @media(prefers-reduced-motion:reduce){.hero-symbol .u-front,.hero-symbol img.u-echo{animation:none}.hero-symbol .u-front{transform:translateZ(14px)}.hero-symbol img.u-echo{transform:translate(16px,5px) translateZ(-24px)}}
 .insight-card{padding:0 24px 24px;min-height:460px}
 .insight-card:after{display:none}
