@@ -1,9 +1,9 @@
 const offers = [
-  { name: "VitaCore Daily", category: "NUTRA", rank: "TOP 1", geo: "🇻🇳 Việt Nam", image: "/offer-01.png" },
-  { name: "DermaGlow Plus", category: "BEAUTY", rank: "TOP 2", geo: "🇹🇭 Thái Lan", image: "/offer-02.png" },
-  { name: "FlexMove Active", category: "WELLNESS", rank: "TOP 3", geo: "🇮🇩 Indonesia", image: "/offer-03.png" },
-  { name: "PureBalance", category: "NUTRA", rank: "TOP 4", geo: "🇲🇾 Malaysia", image: "/offer-04.png" },
-  { name: "ActiveMen Pro", category: "PERSONAL CARE", rank: "TOP 5", geo: "🌏 Đông Nam Á", image: "/offer-05.png" }
+  { name: "Megamove390-id", category: "🦴 XƯƠNG KHỚP", rank: "TOP 1", country: "Indonesia", flag: "/flag-id.svg", ar: "30–35%", payout: "$24–28", image: "/offer-01.png?v=real-1" },
+  { name: "Protolite-th", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 2", country: "Thái Lan", flag: "/flag-th.svg", ar: "30–35%", payout: "$26–30", image: "/offer-02.png?v=real-1" },
+  { name: "Detarin-th", category: "🪱 KÝ SINH TRÙNG", rank: "TOP 3", country: "Thái Lan", flag: "/flag-th.svg", ar: "35–40%", payout: "$26–30", image: "/offer-03.png?v=real-1" },
+  { name: "Bonivita-my", category: "🦴 XƯƠNG KHỚP", rank: "TOP 4", country: "Malaysia", flag: "/flag-my.svg", ar: "35–40%", payout: "$24–28", image: "/offer-04.png?v=real-1" },
+  { name: "Urafirin-my", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 5", country: "Malaysia", flag: "/flag-my.svg", ar: "30–35%", payout: "$24–28", image: "/offer-05.png?v=real-3" }
 ];
 
 offers.forEach((offer) => {
@@ -18,6 +18,8 @@ const name = document.querySelector("#offer-name");
 const category = document.querySelector("#offer-category");
 const rank = document.querySelector("#offer-rank");
 const geo = document.querySelector("#offer-geo");
+const ar = document.querySelector("#offer-ar");
+const payout = document.querySelector("#offer-payout");
 const watermark = document.querySelector(".rank-watermark");
 const progress = document.querySelector(".progress i");
 const offerStage = document.querySelector(".offer-stage");
@@ -34,7 +36,10 @@ function showOffer(index) {
     name.textContent = offer.name;
     category.textContent = offer.category;
     rank.textContent = offer.rank;
-    geo.textContent = offer.geo;
+    geo.src = offer.flag;
+    geo.alt = offer.country;
+    ar.textContent = offer.ar;
+    payout.textContent = offer.payout;
     watermark.textContent = String(activeOffer + 1).padStart(2, "0");
     tabs.forEach((tab, i) => { tab.classList.toggle("active", i === activeOffer); tab.setAttribute('aria-pressed', String(i === activeOffer)); });
     progress.style.width = `${(activeOffer + 1) * 20}%`;
@@ -61,6 +66,17 @@ function selectOffer(index) {
 tabs.forEach((tab) => tab.addEventListener("click", () => selectOffer(Number(tab.dataset.index))));
 document.querySelector("#prev-offer").addEventListener("click", () => selectOffer(activeOffer - 1));
 document.querySelector("#next-offer").addEventListener("click", () => selectOffer(activeOffer + 1));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  const target = event.target;
+  if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+  const rect = offerStage.getBoundingClientRect();
+  const offerIsVisible = rect.bottom > 0 && rect.top < window.innerHeight;
+  if (!offerIsVisible) return;
+  event.preventDefault();
+  selectOffer(activeOffer + (event.key === "ArrowRight" ? 1 : -1));
+});
 
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) window.clearTimeout(offerAutoplay);

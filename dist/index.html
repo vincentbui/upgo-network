@@ -10,9 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/motion.css" />
+    <link rel="stylesheet" href="/motion.css?v=footer-logo-color-1" />
   </head>
-  <body>
+  <body class="splash-active">
+    <div class="brand-scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+    <div class="site-splash" data-site-splash role="status" aria-label="Đang tải UPGO">
+      <img class="site-splash-logo" src="/upgo-wordmark-light.svg" alt="UPGO" width="1281" height="312" />
+      <p class="site-splash-tagline">MOVE FORWARD</p>
+      <div class="site-splash-track" aria-hidden="true"><span class="site-splash-bar"></span></div>
+    </div>
     <div class="ticker" aria-label="Cập nhật mới nhất">
       <div class="ticker-track">
         <span><b>MỚI</b> UPGO chính thức mở đăng ký Publisher tại Việt Nam</span>
@@ -30,7 +36,6 @@
         <a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a href="#insights">Blog</a><a href="#contact">Liên hệ</a>
       </nav>
       <div class="header-actions">
-        <button class="lang" type="button" aria-label="Ngôn ngữ hiện tại: Tiếng Việt">VN</button>
         <a class="login pending-link" href="#">Đăng nhập</a>
         <a class="button button-small pending-link" href="#">Đăng ký Publisher <span>↗</span></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Mở menu"><span></span><span></span></button>
@@ -50,7 +55,7 @@
           <a href="#contact" class="text-link">Xem chi tiết <span>↗</span></a>
         </div>
         <div class="event-art" aria-hidden="true">
-          <img class="event-visual is-active" src="/event-launch.png" alt="" width="1536" height="1024" />
+          <img class="event-visual is-active" src="/event-launch-sharp.png" alt="" width="1536" height="1024" />
           <img class="event-visual" src="/event-webinar.png" alt="" width="1536" height="1024" />
           <img class="event-visual" src="/event-offers.png" alt="" width="1536" height="1024" />
         </div>
@@ -89,10 +94,6 @@
             <img class="u-layer layer-05" src="/upgo-mark-blue.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-06" src="/upgo-mark-blue.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-07" src="/upgo-mark-blue.svg" alt="" width="272" height="312" />
-            <img class="u-layer layer-08" src="/upgo-mark-deep.svg" alt="" width="272" height="312" />
-            <img class="u-layer layer-09" src="/upgo-mark-deep.svg" alt="" width="272" height="312" />
-            <img class="u-layer layer-10" src="/upgo-mark-deep.svg" alt="" width="272" height="312" />
-            <img class="u-layer layer-11" src="/upgo-mark-deep.svg" alt="" width="272" height="312" />
           </div></div>
           <div class="signal-card signal-a"><small>PERFORMANCE</small><strong>Ready to scale</strong></div>
           <div class="signal-card signal-b"><small>NETWORK</small><strong>VN → SEA</strong></div>
@@ -119,16 +120,16 @@
         <div class="section-shell">
           <div class="section-heading offer-heading">
             <div><p class="eyebrow light"><span></span> TOP 5 PERFORMING OFFERS</p><h2>Top Offer độc quyền<br />từ <em>UPGO.</em></h2></div>
-            <p>Danh sách demo cho bản preview. Dữ liệu chính thức sẽ được cập nhật trực tiếp từ Affiliate Manager trước khi phát hành.</p>
+          <p>Top 5 Offer đang được ưu tiên tại Indonesia, Thái Lan và Malaysia.</p>
           </div>
           <div class="offer-carousel">
             <div class="offer-stage">
-              <div class="offer-image-wrap"><span class="rank-watermark">01</span><img id="offer-image" src="/offer-01.png" alt="Mockup sản phẩm offer mẫu" /></div>
+              <div class="offer-image-wrap"><span class="rank-watermark">01</span><img id="offer-image" src="/offer-01.png?v=real-1" alt="Megamove390-id gồm hộp và lọ sản phẩm" /></div>
               <div class="offer-info">
-                <div class="offer-tags"><span id="offer-category">NUTRA</span><span id="offer-rank">TOP 1</span></div>
-                <p class="demo-label">DỮ LIỆU MINH HỌA</p>
-                <h3 id="offer-name">VitaCore Daily</h3>
-                <div class="metrics"><div><small>PAYOUT</small><strong>Đang cập nhật</strong></div><div><small>AR%</small><strong>—</strong><span class="metric-bar"><i></i></span></div><div><small>GEO</small><strong id="offer-geo">🇻🇳 Việt Nam</strong></div></div>
+                <div class="offer-tags"><span id="offer-category">🦴 XƯƠNG KHỚP</span><span id="offer-rank">TOP 1</span></div>
+                <p class="demo-label">TOP PERFORMING OFFER</p>
+                <h3 id="offer-name">Megamove390-id</h3>
+                <div class="metrics"><div><small>PAYOUT</small><strong id="offer-payout">$24–28</strong></div><div><small>AR%</small><strong id="offer-ar">30–35%</strong></div><div><small>GEO</small><img id="offer-geo" class="geo-flag" src="/flag-id.svg" alt="Indonesia" width="42" height="28" /></div></div>
                 <a class="button pending-link" href="#">Start Earn <span>↗</span></a>
               </div>
             </div>
@@ -157,7 +158,7 @@
 
     <footer>
       <div class="footer-main section-shell">
-        <div class="footer-brand"><img src="/upgo.svg" alt="UPGO" /><strong>The Network for Scale.</strong><p>Global Affiliate Network</p></div>
+        <div class="footer-brand"><img src="/upgo-logo-light.svg" alt="UPGO — Move Forward" /><strong>The Network for Scale.</strong><p>Global Affiliate Network</p></div>
         <div><h3>KHÁM PHÁ</h3><a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a href="#insights">Blog</a></div>
         <div><h3>PHÁP LÝ</h3><a class="pending-link" href="#">Chính sách bảo mật</a><a class="pending-link" href="#">Chính sách Cookie</a><a class="pending-link" href="#">Điều khoản và Điều kiện</a></div>
         <div><h3>KẾT NỐI</h3><a class="pending-link" href="#">Telegram Support ↗</a><a class="pending-link" href="#">Zalo OA ↗</a><a class="pending-link" href="#">Facebook ↗</a><a class="pending-link" href="#">LinkedIn ↗</a></div>
@@ -165,7 +166,7 @@
       <div class="footer-bottom section-shell"><span>© 2026 UPGO. Bảo lưu mọi quyền.</span><span>Move Forward.</span></div>
     </footer>
     <div class="toast" role="status" aria-live="polite">Liên kết sẽ được cập nhật trước khi phát hành.</div>
-    <script src="/script.js"></script>
-    <script src="/motion.js"></script>
+    <script src="/script.js?v=offer-keyboard-1"></script>
+    <script src="/motion.js?v=brand-scroll-progress-2"></script>
   </body>
 </html>

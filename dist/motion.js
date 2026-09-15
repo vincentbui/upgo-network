@@ -1,4 +1,44 @@
 (() => {
+  const scrollProgress = document.querySelector('[data-scroll-progress]');
+  if (scrollProgress) {
+    let scrollProgressQueued = false;
+    const updateScrollProgress = () => {
+      const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollRange > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollRange)) : 0;
+      scrollProgress.style.transform = `scaleX(${progress})`;
+      scrollProgressQueued = false;
+    };
+    const queueScrollProgress = () => {
+      if (scrollProgressQueued) return;
+      scrollProgressQueued = true;
+      requestAnimationFrame(updateScrollProgress);
+    };
+    updateScrollProgress();
+    window.addEventListener('scroll', queueScrollProgress, { passive: true });
+    window.addEventListener('resize', queueScrollProgress);
+  }
+
+  const splash = document.querySelector('[data-site-splash]');
+  if (splash) {
+    let splashSeen = false;
+    try { splashSeen = sessionStorage.getItem('upgo_first_visit_splash_v1') === '1'; } catch {}
+    if (splashSeen) {
+      splash.remove();
+      document.body.classList.remove('splash-active');
+    } else {
+      try { sessionStorage.setItem('upgo_first_visit_splash_v1', '1'); } catch {}
+      document.body.classList.add('splash-active');
+      requestAnimationFrame(() => splash.classList.add('is-running'));
+      const splashReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const splashDuration = splashReduced ? 220 : 1450;
+      window.setTimeout(() => {
+        splash.classList.add('is-leaving');
+        document.body.classList.remove('splash-active');
+      }, splashDuration);
+      window.setTimeout(() => splash.remove(), splashDuration + (splashReduced ? 80 : 500));
+    }
+  }
+
   // Fixed reading speed and exact repeat distance prevent a jump at the seam.
   const ticker = document.querySelector('.ticker');
   const track = ticker.querySelector('.ticker-track');
