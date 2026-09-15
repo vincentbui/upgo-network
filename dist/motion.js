@@ -49,9 +49,9 @@
   const banner = document.querySelector('.event-banner');
   const copy = banner.querySelector('.event-copy');
   const events = [
-    ['EVENT','UPGO Launch Week — Ưu đãi đăng ký Publisher đầu tiên','Tham gia tuần ra mắt để nhận hỗ trợ ưu tiên từ Affiliate Manager. Chương trình minh họa, thông tin chính thức đang cập nhật.'],
-    ['WEBINAR','Từ test đến scale — Cùng Affiliate Manager','Trao đổi về lựa chọn Offer, test creative và tối ưu campaign. Lịch webinar minh họa đang chờ xác nhận.'],
-    ['OFFER UPDATE','Khám phá cơ hội mới tại thị trường SEA','Danh mục Nutra và Beauty dành cho Publisher đang được chuẩn bị. Nội dung minh họa cho bản preview.']
+    ['LAUNCH WEEK','Thế hệ Publisher đầu tiên. Cùng UPGO.','Khởi đầu cùng Affiliate Manager, tìm Offer phù hợp với nguồn Traffic của bạn.'],
+    ['WEBINAR','Từ test đến scale. Cùng chuyên gia.','Chọn Offer, test creative, tối ưu campaign. Lịch chia sẻ đang được cập nhật.'],
+    ['OFFER UPDATE','Offer mới. Cơ hội mới tại SEA.','Khám phá Nutra & Beauty cho nguồn Traffic của bạn. Danh mục đang được cập nhật.']
   ];
   const controls = document.createElement('div'); controls.className='event-controls'; controls.setAttribute('aria-label','Điều khiển banner');
   let index=0, paused=reduced.matches, hovered=false, focused=false;
@@ -59,14 +59,32 @@
     const b=document.createElement('button');b.type='button';b.className='event-dot';b.setAttribute('aria-label',`Banner ${i+1}: ${event[0]}`);
     b.addEventListener('click',()=>{render(i);});controls.append(b);return b;
   });
-  copy.append(controls);
-  function render(i){
-    index=i;copy.querySelector('h2').textContent=events[i][1];copy.querySelector('p').textContent=events[i][2];
-    const labels=copy.querySelectorAll('.event-label span');labels[0].textContent=events[i][0];labels[1].textContent=`${String(i+1).padStart(2,'0')} / 03`;
-    buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
-    copy.classList.remove('content-enter');requestAnimationFrame(()=>copy.classList.add('content-enter'));
+  function arrow(direction,label,symbol){
+    const button=document.createElement('button');button.type='button';button.className='event-arrow';button.textContent=symbol;button.setAttribute('aria-label',label);
+    button.addEventListener('click',()=>render(index+direction));return button;
   }
-  render(0);
+  controls.prepend(arrow(-1,'Banner trước','‹'));controls.append(arrow(1,'Banner tiếp theo','›'));banner.append(controls);
+  controls.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();render(index+(e.key==='ArrowRight'?1:-1));}});
+  const visuals=[...banner.querySelectorAll('.event-visual')];
+  const ready=visuals.map(img=>img.decode ? img.decode().catch(()=>{}) : Promise.resolve());
+  let eventRevision=0;
+  async function render(i,animate=true){
+    const next=(i+events.length)%events.length;
+    if(animate&&next===index)return;
+    const revision=++eventRevision;index=next;
+    await ready[next];if(revision!==eventRevision)return;
+    copy.getAnimations().forEach(animation=>animation.cancel());
+    if(animate){
+      const out=copy.animate([{opacity:1},{opacity:0}],{duration:160,fill:'forwards'});
+      await out.finished.catch(()=>{});if(revision!==eventRevision)return;out.cancel();
+    }
+    copy.querySelector('h2').textContent=events[next][1];copy.querySelector('p').textContent=events[next][2];
+    copy.querySelector('.event-label span').textContent=events[next][0];
+    buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(next===j)));
+    visuals.forEach((img,j)=>img.classList.toggle('is-active',next===j));
+    if(animate)copy.animate([{opacity:0,transform:reduced.matches?'none':'translateY(8px)'},{opacity:1,transform:'none'}],{duration:440,easing:'cubic-bezier(.2,.7,.2,1)'});
+  }
+  render(0,false);
   banner.addEventListener('pointerenter',()=>{hovered=true;});banner.addEventListener('pointerleave',()=>{hovered=false;});
   banner.addEventListener('focusin',()=>{focused=true;});banner.addEventListener('focusout',e=>{focused=banner.contains(e.relatedTarget);});
   window.setInterval(()=>{if(!paused&&!hovered&&!focused&&!document.hidden&&!reduced.matches)render((index+1)%events.length);},6500);
