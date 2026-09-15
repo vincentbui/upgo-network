@@ -68,7 +68,10 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 .hero-actions>.button:first-child:hover{background:#ffdc61;border-color:#ffdc61;box-shadow:0 12px 30px #fec70b44}
 .process-line>span:last-child{color:#fec70b;background:#fec70b16;border:1px solid #fec70b66;border-radius:8px;padding:9px 13px;margin-block:-10px}
 .process-line>span:last-child b{color:#fec70b}
-.advantages .section-heading h2 em{color:#1937f7;background:linear-gradient(90deg,#122994,#1937f7 55%,#3563c9);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.advantages .section-heading h2{font-size:clamp(38px,4.2vw,60px);letter-spacing:-.055em}
+.advantages .section-heading .heading-line{white-space:nowrap}
+.advantages .section-heading h2 em,.insights .section-heading h2 em{color:#1937f7;background:linear-gradient(90deg,#122994,#1937f7 55%,#3563c9);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+@media(max-width:760px){.advantages .section-heading h2{font-size:clamp(24px,7vw,34px)}}
 .event-banner{min-height:220px;grid-template-columns:1.45fr .55fr}
 .event-copy{padding:27px 36px;max-width:870px}
 .event-copy h2{min-height:0;font-size:clamp(25px,2.15vw,34px);margin:12px 0 7px;line-height:1.08}
