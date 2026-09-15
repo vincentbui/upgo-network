@@ -103,6 +103,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #fec70b;outline-offset:5p
 @media(max-width:760px){.event-banner{min-height:0}.event-copy{padding:24px 22px 78px}.event-copy h2{font-size:27px}.event-copy p{font-size:14px}.event-controls{left:22px;right:auto;bottom:20px}.audience-actions{grid-template-columns:1fr;gap:10px;margin-bottom:14px}.audience-card{min-height:116px;padding:20px;align-items:flex-end}.audience-card h2{font-size:20px}.audience-button{min-height:44px;padding:0 14px;font-size:12px}}
 
 /* Editorial event slider: compact copy, full visual, persistent navigation. */
+.hero-symbol{position:absolute;left:50%;top:48%;width:clamp(190px,21vw,290px);transform:translate(-50%,-50%);isolation:isolate}
+.hero-symbol:before{content:'';position:absolute;inset:-26%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse,#e8efff99 0%,#adc2ff44 35%,#ffffff00 68%);animation:u-halo 5s ease-in-out infinite}
+.hero-symbol img{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 2px #fff8) drop-shadow(0 22px 22px #07145588);animation:u-float 5s ease-in-out infinite}
+.hero-symbol:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#ffffff99 45%,transparent 60%);background-size:300% 100%;mask:url('/upgo-symbol.png') center/contain no-repeat;pointer-events:none;animation:u-sheen 5s ease-in-out infinite,u-float 5s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes u-float{0%,100%{transform:translateY(4px) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes u-halo{0%,100%{opacity:.65;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes u-sheen{0%,20%{background-position:150% 0;opacity:0}35%,65%{opacity:.55}80%,100%{background-position:-50% 0;opacity:0}}
 .event-banner{grid-template-columns:1.1fr 1fr;min-height:260px;background:radial-gradient(ellipse at 5% 0%,#1937f744,transparent 65%),#101a40;color:#fff;border:1px solid #536bff44;isolation:isolate}
 .event-banner .event-copy{padding:28px 16px 28px 34px;max-width:600px;align-self:center;min-width:0}
 .event-banner .event-label{font-size:12px;color:#fec70b}
