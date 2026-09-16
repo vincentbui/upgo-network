@@ -10,7 +10,7 @@ body.splash-active{overflow:hidden}
 .site-splash-bar{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1937f7,#fec70b);transform:scaleX(0);transform-origin:left;transition:transform 1350ms cubic-bezier(.4,0,.2,1)}
 .site-splash.is-running .site-splash-logo,.site-splash.is-running .site-splash-tagline{opacity:1;transform:none}
 .site-splash.is-running .site-splash-bar{transform:scaleX(1)}
-.footer-brand img[src="/upgo-logo-light.svg"]{filter:none}
+.footer-brand img[src="./upgo-logo-light.svg"]{filter:none}
 section[id]{scroll-margin-top:110px}
 .ticker-track{animation:ticker 42s linear infinite}
 .ticker-track.ticker-ready{animation:ticker-loop var(--ticker-duration,45s) linear infinite;will-change:transform}

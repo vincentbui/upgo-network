@@ -1,9 +1,9 @@
 const offers = [
-  { name: "Megamove390-id", category: "🦴 XƯƠNG KHỚP", rank: "TOP 1", country: "Indonesia", flag: "/flag-id.svg", ar: "30–35%", payout: "$24–28", image: "/offer-01.png?v=real-1" },
-  { name: "Protolite-th", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 2", country: "Thái Lan", flag: "/flag-th.svg", ar: "30–35%", payout: "$26–30", image: "/offer-02.png?v=real-1" },
-  { name: "Detarin-th", category: "🪱 KÝ SINH TRÙNG", rank: "TOP 3", country: "Thái Lan", flag: "/flag-th.svg", ar: "35–40%", payout: "$26–30", image: "/offer-03.png?v=real-1" },
-  { name: "Bonivita-my", category: "🦴 XƯƠNG KHỚP", rank: "TOP 4", country: "Malaysia", flag: "/flag-my.svg", ar: "35–40%", payout: "$24–28", image: "/offer-04.png?v=real-1" },
-  { name: "Urafirin-my", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 5", country: "Malaysia", flag: "/flag-my.svg", ar: "30–35%", payout: "$24–28", image: "/offer-05.png?v=real-3" }
+  { name: "Megamove390-id", category: "🦴 XƯƠNG KHỚP", rank: "TOP 1", country: "Indonesia", flag: "./flag-id.svg", ar: "30–35%", payout: "$24–28", image: "./offer-01.png?v=real-1" },
+  { name: "Protolite-th", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 2", country: "Thái Lan", flag: "./flag-th.svg", ar: "30–35%", payout: "$26–30", image: "./offer-02.png?v=real-1" },
+  { name: "Detarin-th", category: "🪱 KÝ SINH TRÙNG", rank: "TOP 3", country: "Thái Lan", flag: "./flag-th.svg", ar: "35–40%", payout: "$26–30", image: "./offer-03.png?v=real-1" },
+  { name: "Bonivita-my", category: "🦴 XƯƠNG KHỚP", rank: "TOP 4", country: "Malaysia", flag: "./flag-my.svg", ar: "35–40%", payout: "$24–28", image: "./offer-04.png?v=real-1" },
+  { name: "Urafirin-my", category: "🍌 TUYẾN TIỀN LIỆT", rank: "TOP 5", country: "Malaysia", flag: "./flag-my.svg", ar: "30–35%", payout: "$24–28", image: "./offer-05.png?v=real-3" }
 ];
 
 offers.forEach((offer) => {
