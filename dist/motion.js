@@ -148,10 +148,53 @@
   reduced.addEventListener('change',()=>{paused=reduced.matches;});
   const stage=document.querySelector('.offer-stage');let start=null;
   stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')start={x:e.clientX,y:e.clientY};});
-  stage.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)selectOffer(activeOffer+(dx<0?1:-1));});
+  stage.addEventListener('pointerup',e=>{
+    if(!start)return;
+    const dx=e.clientX-start.x,dy=e.clientY-start.y;
+    start=null;
+    if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5){
+      const btn = dx<0 ? document.querySelector("#next-offer") : document.querySelector("#prev-offer");
+      if(btn) btn.click();
+    }
+  });
   stage.addEventListener('pointercancel',()=>{start=null;});
   document.querySelector('.carousel-tabs').removeAttribute('role');
-  const offerControls=document.querySelector('.carousel-controls');
-  offerControls.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();selectOffer(activeOffer+(e.key==='ArrowRight'?1:-1));}});
+  // 3D Card Tilt & Holographic Sheen for Audience cards only (Advantage & Offer excluded)
+  if (!reduced.matches && window.matchMedia('(pointer: fine)').matches) {
+    const tiltCards = document.querySelectorAll('.audience-card');
+    tiltCards.forEach((card) => {
+      let rafId;
+      card.addEventListener('pointermove', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          // Max rotation degrees
+          const maxRotate = card.classList.contains('offer-stage') ? 4 : 7;
+          const rotateX = ((y - centerY) / centerY) * -maxRotate;
+          const rotateY = ((x - centerX) / centerX) * maxRotate;
+          
+          card.style.setProperty('--card-rotate-x', `${rotateX.toFixed(2)}deg`);
+          card.style.setProperty('--card-rotate-y', `${rotateY.toFixed(2)}deg`);
+          card.style.setProperty('--card-glow-x', `${(x / rect.width * 100).toFixed(1)}%`);
+          card.style.setProperty('--card-glow-y', `${(y / rect.height * 100).toFixed(1)}%`);
+          card.classList.add('has-tilt');
+        });
+      });
+      
+      card.addEventListener('pointerleave', () => {
+        cancelAnimationFrame(rafId);
+        card.style.setProperty('--card-rotate-x', '0deg');
+        card.style.setProperty('--card-rotate-y', '0deg');
+        card.classList.remove('has-tilt');
+      });
+    });
+  }
+
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}});
 })();
