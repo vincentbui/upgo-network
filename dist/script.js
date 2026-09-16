@@ -400,3 +400,61 @@ document.querySelectorAll(".pending-link").forEach((link) => link.addEventListen
     showToast("Liên kết sẽ được cập nhật trước khi phát hành.");
   }
 }));
+
+// ============================================================
+// DARK / LIGHT THEME TOGGLE (DEFAULT: LIGHT)
+// ============================================================
+const THEME_STORAGE_KEY = "upgo_theme_preference";
+const themeToggleBtn = document.querySelector("#theme-toggle");
+const themeToggleMobileBtn = document.querySelector("#theme-toggle-mobile");
+
+function getCurrentTheme() {
+  // Always default to 'light' unless user explicitly switched to 'dark'
+  return localStorage.getItem(THEME_STORAGE_KEY) || "light";
+}
+
+function applyTheme(theme) {
+  if (theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+  
+  const isDark = theme === "dark";
+  const ariaLabel = isDark ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối";
+  
+  if (themeToggleBtn) {
+    themeToggleBtn.setAttribute("aria-label", ariaLabel);
+    themeToggleBtn.setAttribute("title", ariaLabel);
+  }
+  if (themeToggleMobileBtn) {
+    themeToggleMobileBtn.setAttribute("aria-label", ariaLabel);
+    const modeText = themeToggleMobileBtn.querySelector(".theme-mode-text");
+    if (modeText) {
+      modeText.textContent = isDark ? "Chế độ: Tối" : "Chế độ: Sáng";
+    }
+  }
+}
+
+function toggleTheme() {
+  const current = getCurrentTheme();
+  const nextTheme = current === "dark" ? "light" : "dark";
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  } catch (e) {
+    // localStorage might be unavailable in private mode
+  }
+  applyTheme(nextTheme);
+  showToast(nextTheme === "dark" ? "🌙 Đã chuyển sang chế độ Tối" : "☀️ Đã chuyển sang chế độ Sáng", 1800);
+}
+
+// Initialize theme on page load (Default: Light)
+applyTheme(getCurrentTheme());
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", toggleTheme);
+}
+if (themeToggleMobileBtn) {
+  themeToggleMobileBtn.addEventListener("click", toggleTheme);
+}
+

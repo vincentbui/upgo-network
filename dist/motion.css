@@ -1287,3 +1287,366 @@ body.modal-locked {
   }
 }
 
+/* ============================================================
+   THEME TOGGLE BUTTON & DARK MODE STYLING
+   ============================================================ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line, #e5e7ee);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink, #101322);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  border-color: #1937f7;
+  color: #1937f7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(25, 55, 247, 0.12);
+}
+
+.theme-toggle svg {
+  position: absolute;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+}
+
+/* Default (Light mode): Show Moon icon (click to go Dark) */
+.theme-toggle .icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+.theme-toggle .icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* Dark mode: Show Sun icon (click to go Light) */
+[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+/* Mobile Theme Toggle row */
+.mobile-nav-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line, #e5e7ee);
+}
+
+.mobile-nav-theme-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted, #666b7b);
+}
+
+.theme-toggle-mobile {
+  width: auto;
+  height: 38px;
+  padding: 0 14px 0 36px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.theme-toggle-mobile svg {
+  left: 10px;
+}
+
+.theme-mode-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+}
+
+/* ============================================================
+   [data-theme="dark"] OVERRIDES
+   ============================================================ */
+/* ============================================================
+   [data-theme="dark"] OVERRIDES & CONTRAST REFINEMENTS
+   ============================================================ */
+/* Base brand logo toggle */
+.brand-logo-dark {
+  display: none;
+}
+.brand-logo-light {
+  display: block;
+}
+
+[data-theme="dark"] {
+  --ink: #f0f3ff;
+  --muted: #a6b2d9;
+  --line: #1e2548;
+  --soft: #121733;
+  --white: #10142b;
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  background-color: #0b0f24;
+  color: #e3e8fc;
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(11, 15, 36, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Header logo: show official upgo-logo-light.svg in dark mode */
+[data-theme="dark"] .brand-logo-light {
+  display: none;
+}
+[data-theme="dark"] .brand-logo-dark {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: none;
+}
+
+[data-theme="dark"] .desktop-nav a {
+  color: #c7d1f5;
+}
+[data-theme="dark"] .desktop-nav a:hover {
+  color: #fec70b;
+}
+
+[data-theme="dark"] .login {
+  color: #e2e8ff;
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: #151a3a;
+  border-color: #273059;
+  color: #fec70b;
+}
+[data-theme="dark"] .theme-toggle:hover {
+  border-color: #fec70b;
+  box-shadow: 0 4px 16px rgba(254, 199, 11, 0.18);
+}
+
+[data-theme="dark"] .menu-toggle {
+  background: #151a3a;
+  border-color: #273059;
+}
+[data-theme="dark"] .menu-toggle span {
+  background: #e2e8ff;
+}
+
+[data-theme="dark"] .mobile-nav {
+  background: #0f1430;
+  border-bottom-color: #232a50;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+}
+[data-theme="dark"] .mobile-nav a {
+  color: #e2e8ff;
+}
+[data-theme="dark"] .mobile-nav-top-row {
+  border-bottom-color: #232a50;
+}
+[data-theme="dark"] .mobile-nav-theme-label {
+  color: #8f9bc0;
+}
+
+/* Event banner: Ensure text, description, and action button are crystal clear */
+[data-theme="dark"] .event-banner {
+  background: linear-gradient(115deg, #131a40 0%, #171f45 50%, #201e2f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+[data-theme="dark"] .event-copy h2 {
+  color: #ffffff;
+}
+[data-theme="dark"] .event-copy p {
+  color: #c7d2f7;
+}
+[data-theme="dark"] .event-banner .text-link {
+  color: #101322 !important;
+  background: #fec70b;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(254, 199, 11, 0.25);
+}
+[data-theme="dark"] .event-banner .text-link:hover {
+  background: #ffdc61;
+}
+
+/* Hero section buttons fix: outline button text must be distinct against white background */
+.hero .hero-actions .button.pending-link:first-child {
+  background: #fec70b;
+  color: #101322;
+  border-color: #fec70b;
+  font-weight: 800;
+}
+.hero .hero-actions .button.pending-link:first-child:hover {
+  background: #ffdc61;
+  box-shadow: 0 10px 24px rgba(254, 199, 11, 0.35);
+}
+.hero .hero-actions .button.button-outline {
+  background: #ffffff;
+  color: #101322 !important;
+  border-color: #ffffff;
+  font-weight: 700;
+}
+.hero .hero-actions .button.button-outline:hover {
+  background: #f0f3ff;
+  color: #1937f7 !important;
+}
+
+/* Audience cards: Brand card (white in light mode) darkens */
+[data-theme="dark"] .audience-brand {
+  background: #131733;
+  border: 1px solid #232b57;
+  color: #e3e8fc;
+}
+[data-theme="dark"] .audience-brand h2 {
+  color: #ffffff;
+}
+[data-theme="dark"] .audience-brand p {
+  color: #8c98c2;
+}
+[data-theme="dark"] .audience-brand .audience-button {
+  background: #1d2552;
+  border-color: #313c77;
+  color: #ffffff;
+}
+[data-theme="dark"] .audience-brand .audience-button:hover {
+  background: #1937f7;
+  border-color: #1937f7;
+}
+
+/* Advantage section headings & yellow highlights */
+[data-theme="dark"] .section-heading h2 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .section-heading h2 em,
+[data-theme="dark"] .section-heading em,
+[data-theme="dark"] h2 em,
+[data-theme="dark"] .advantages .section-heading h2 em,
+[data-theme="dark"] .insights .section-heading h2 em,
+[data-theme="dark"] #insights .section-heading h2 em {
+  color: #fec70b !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #fec70b !important;
+  font-style: normal;
+}
+[data-theme="dark"] .section-heading>p {
+  color: #c0caf0 !important;
+}
+
+[data-theme="dark"] .advantage-grid {
+  border-color: #1d2448;
+}
+[data-theme="dark"] .advantage-grid article {
+  background: #0f1430;
+  border-color: #1d2448;
+}
+[data-theme="dark"] .advantage-grid article:hover {
+  background: linear-gradient(135deg, #161e47 0%, #1c2352 58%, #2d2a1c 100%);
+  border-color: #3b4d99;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
+}
+[data-theme="dark"] .advantage-grid article:nth-child(even):hover {
+  background: linear-gradient(135deg, #2b2510 0%, #1a1e3d 55%, #182255 100%);
+}
+[data-theme="dark"] .advantage-grid h3,
+[data-theme="dark"] .advantage-grid article h3,
+[data-theme="dark"] .advantage-grid article:hover h3 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .advantage-grid p,
+[data-theme="dark"] .advantage-grid article p,
+[data-theme="dark"] .advantage-grid article>p {
+  color: #d1dcff !important;
+}
+[data-theme="dark"] .advantage-grid article:hover p,
+[data-theme="dark"] .advantage-grid article:hover>p {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .advantage-icon:after {
+  border-color: #0f1430;
+}
+
+/* Insights section & Yellow Card text contrast fix */
+[data-theme="dark"] #insights .section-heading h2 em {
+  color: #fec70b !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #fec70b !important;
+}
+.insight-card.yellow {
+  color: #101322 !important;
+}
+.insight-card.yellow > span {
+  color: #242940 !important;
+  font-weight: 800;
+}
+.insight-card.yellow small {
+  color: #363d59 !important;
+  opacity: 0.95;
+  font-weight: 700;
+}
+.insight-card.yellow h3 {
+  color: #101322 !important;
+}
+.insight-card.yellow button {
+  color: #101322 !important;
+  border-color: #242940 !important;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+/* Ticker badge fix */
+.ticker-track b {
+  background: #101322 !important;
+  color: #ffffff !important;
+}
+
+/* Offer info side (inside dark offers carousel) */
+[data-theme="dark"] .offer-info {
+  background: #101533;
+  color: #ffffff;
+}
+[data-theme="dark"] .offer-info h3 {
+  color: #ffffff;
+}
+[data-theme="dark"] .metric-bar {
+  background: #1d254e;
+}
+[data-theme="dark"] .copy-offer-btn {
+  background: #171e44;
+  border-color: #2a356b;
+  color: #c7d2f7;
+}
+[data-theme="dark"] .copy-offer-btn:hover {
+  background: #232c63;
+  color: #ffffff;
+}
+[data-theme="dark"] .button-outline-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #c7d2f7;
+}
+[data-theme="dark"] .button-outline-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+
+
+

@@ -1,92 +1,154 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UPGO — Mạng lưới cho mọi cú bứt phá</title>
-    <meta name="description" content="UPGO kết nối Publisher, Media Buyer và Affiliate Agency với hệ thống offer đa dạng, minh bạch tại nhiều thị trường." />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./motion.css?v=adv-tilt-off" />
-  </head>
-  <body class="splash-active">
-    <div class="brand-scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
-    <div class="site-splash" data-site-splash role="status" aria-label="Đang tải UPGO">
-      <img class="site-splash-logo" src="./upgo-wordmark-light.svg" alt="UPGO" width="1281" height="312" />
-      <p class="site-splash-tagline">MOVE FORWARD</p>
-      <div class="site-splash-track" aria-hidden="true"><span class="site-splash-bar"></span></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPGO — Mạng lưới cho mọi cú bứt phá</title>
+  <meta name="description"
+    content="UPGO kết nối Publisher, Media Buyer và Affiliate Agency với hệ thống offer đa dạng, minh bạch tại nhiều thị trường." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./motion.css?v=final-contrast" />
+</head>
+
+<body class="splash-active">
+  <div class="brand-scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+  <div class="site-splash" data-site-splash role="status" aria-label="Đang tải UPGO">
+    <img class="site-splash-logo" src="./upgo-wordmark-light.svg" alt="UPGO" width="1281" height="312" />
+    <p class="site-splash-tagline">MOVE FORWARD</p>
+    <div class="site-splash-track" aria-hidden="true"><span class="site-splash-bar"></span></div>
+  </div>
+  <div class="ticker" aria-label="Cập nhật mới nhất">
+    <div class="ticker-track">
+      <span><b>MỚI</b> UPGO chính thức mở đăng ký Publisher tại Việt Nam</span>
+      <span><b>EVENT</b> Launch Week — ưu tiên hỗ trợ Publisher đầu tiên</span>
+      <span><b>OFFER</b> Danh mục Nutra mới đang được cập nhật</span>
+      <span><b>PAYOUT</b> Lịch thanh toán linh hoạt, đối soát minh bạch</span>
+      <span aria-hidden="true"><b>MỚI</b> UPGO chính thức mở đăng ký Publisher tại Việt Nam</span>
+      <span aria-hidden="true"><b>EVENT</b> Launch Week — ưu tiên hỗ trợ Publisher đầu tiên</span>
     </div>
-    <div class="ticker" aria-label="Cập nhật mới nhất">
-      <div class="ticker-track">
-        <span><b>MỚI</b> UPGO chính thức mở đăng ký Publisher tại Việt Nam</span>
-        <span><b>EVENT</b> Launch Week — ưu tiên hỗ trợ Publisher đầu tiên</span>
-        <span><b>OFFER</b> Danh mục Nutra mới đang được cập nhật</span>
-        <span><b>PAYOUT</b> Lịch thanh toán linh hoạt, đối soát minh bạch</span>
-        <span aria-hidden="true"><b>MỚI</b> UPGO chính thức mở đăng ký Publisher tại Việt Nam</span>
-        <span aria-hidden="true"><b>EVENT</b> Launch Week — ưu tiên hỗ trợ Publisher đầu tiên</span>
-      </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="UPGO — Trang chủ">
+      <img class="brand-logo-light" src="./upgo.svg" alt="UPGO" />
+      <img class="brand-logo-dark" src="./upgo-logo-light.svg" alt="UPGO" />
+    </a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a
+        href="#insights">Blog</a><a href="#contact">Liên hệ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Chuyển chế độ sáng / tối"
+        title="Chuyển chế độ sáng / tối">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <a class="login pending-link" href="#">Đăng nhập</a>
+      <a class="button button-small pending-link" href="#">Đăng ký Publisher <span>↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"
+        aria-label="Mở menu"><span></span><span></span></button>
     </div>
-
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="UPGO — Trang chủ"><img src="./upgo.svg" alt="UPGO" /></a>
-      <nav class="desktop-nav" aria-label="Điều hướng chính">
-        <a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a href="#insights">Blog</a><a href="#contact">Liên hệ</a>
-      </nav>
-      <div class="header-actions">
-        <a class="login pending-link" href="#">Đăng nhập</a>
-        <a class="button button-small pending-link" href="#">Đăng ký Publisher <span>↗</span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Mở menu"><span></span><span></span></button>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Điều hướng trên điện thoại">
+      <div class="mobile-nav-top-row">
+        <span class="mobile-nav-theme-label">Chế độ giao diện:</span>
+        <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" type="button"
+          aria-label="Chuyển chế độ sáng / tối">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-mode-text">Sáng / Tối</span>
+        </button>
       </div>
-      <nav id="mobile-nav" class="mobile-nav" aria-label="Điều hướng trên điện thoại">
-        <a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a href="#insights">Blog</a><a href="#contact">Liên hệ</a>
-        <a class="button pending-link" href="#">Đăng ký Publisher ↗</a>
-      </nav>
-    </header>
+      <a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a
+        href="#insights">Blog</a><a href="#contact">Liên hệ</a>
+      <a class="button pending-link" href="#">Đăng ký Publisher ↗</a>
+    </nav>
+  </header>
 
-    <main id="top">
-      <section class="event-banner section-shell" aria-label="Sự kiện nổi bật">
-        <div class="event-copy">
-          <div class="event-label"><span>LAUNCH WEEK</span></div>
-          <h2>Thế hệ Publisher đầu tiên. Cùng UPGO.</h2>
-          <p>Khởi đầu cùng Affiliate Manager, tìm Offer phù hợp với nguồn Traffic của bạn.</p>
-          <a href="#contact" class="text-link">Xem chi tiết <span>↗</span></a>
-        </div>
-        <div class="event-art" aria-hidden="true">
-          <img class="event-visual is-active" src="./event-launch-sharp.png" alt="" width="1536" height="1024" />
-          <img class="event-visual" src="./event-webinar.png" alt="" width="1536" height="1024" />
-          <img class="event-visual" src="./event-offers.png" alt="" width="1536" height="1024" />
-        </div>
-      </section>
+  <main id="top">
+    <section class="event-banner section-shell" aria-label="Sự kiện nổi bật">
+      <div class="event-copy">
+        <div class="event-label"><span>LAUNCH WEEK</span></div>
+        <h2>Thế hệ Publisher đầu tiên. Cùng UPGO.</h2>
+        <p>Khởi đầu cùng Affiliate Manager, tìm Offer phù hợp với nguồn Traffic của bạn.</p>
+        <a href="#contact" class="text-link">Xem chi tiết <span>↗</span></a>
+      </div>
+      <div class="event-art" aria-hidden="true">
+        <img class="event-visual is-active" src="./event-launch-sharp.png" alt="" width="1536" height="1024" />
+        <img class="event-visual" src="./event-webinar.png" alt="" width="1536" height="1024" />
+        <img class="event-visual" src="./event-offers.png" alt="" width="1536" height="1024" />
+      </div>
+    </section>
 
-      <section class="audience-actions section-shell" aria-label="Lựa chọn hình thức hợp tác">
-        <article class="audience-card audience-brand">
-          <div><p>DÀNH CHO ADVERTISER / BRAND</p><h2>Hợp tác cùng UPGO</h2></div>
-          <a class="audience-button pending-link" href="#">Nhận tư vấn <span>↗</span></a>
-        </article>
-        <article class="audience-card audience-publisher">
-          <div><p>DÀNH CHO PUBLISHER</p><h2>Tìm Offer. Chạy Traffic. Scale.</h2></div>
-          <a class="audience-button pending-link" href="#">Tham gia ngay <span>↗</span></a>
-        </article>
-      </section>
-
-      <section class="hero section-shell" id="about">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> GLOBAL AFFILIATE NETWORK</p>
-          <h1>Mạng lưới cho mọi cú <em>bứt phá.</em></h1>
-          <p class="hero-position">The Network for Scale.</p>
-          <p class="hero-description">UPGO kết nối Publisher, Media Buyer và Affiliate Agency với hệ thống Offer đa dạng, minh bạch tại nhiều thị trường.</p>
-          <div class="hero-actions">
-            <a class="button pending-link" href="#">Bắt đầu Scale <span>↗</span></a>
-            <a class="button button-outline pending-link" href="#">Liên hệ qua Telegram</a>
-          </div>
-          <p class="microcopy">Đăng ký miễn phí · Affiliate Manager hỗ trợ trực tiếp</p>
+    <section class="audience-actions section-shell" aria-label="Lựa chọn hình thức hợp tác">
+      <article class="audience-card audience-brand">
+        <div>
+          <p>DÀNH CHO ADVERTISER / BRAND</p>
+          <h2>Hợp tác cùng UPGO</h2>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="hero-symbol"><div class="u-stage">
+        <a class="audience-button pending-link" href="#">Nhận tư vấn <span>↗</span></a>
+      </article>
+      <article class="audience-card audience-publisher">
+        <div>
+          <p>DÀNH CHO PUBLISHER</p>
+          <h2>Tìm Offer. Chạy Traffic. Scale.</h2>
+        </div>
+        <a class="audience-button pending-link" href="#">Tham gia ngay <span>↗</span></a>
+      </article>
+    </section>
+
+    <section class="hero section-shell" id="about">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> GLOBAL AFFILIATE NETWORK</p>
+        <h1>Mạng lưới cho mọi cú <em>bứt phá.</em></h1>
+        <p class="hero-position">The Network for Scale.</p>
+        <p class="hero-description">UPGO kết nối Publisher, Media Buyer và Affiliate Agency với hệ thống Offer đa dạng,
+          minh bạch tại nhiều thị trường.</p>
+        <div class="hero-actions">
+          <a class="button pending-link" href="#">Bắt đầu Scale <span>↗</span></a>
+          <a class="button button-outline pending-link" href="#">Liên hệ qua Telegram</a>
+        </div>
+        <p class="microcopy">Đăng ký miễn phí · Affiliate Manager hỗ trợ trực tiếp</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-symbol">
+          <div class="u-stage">
             <img class="u-layer layer-01" src="./upgo-mark-ice.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-02" src="./upgo-mark-ice.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-03" src="./upgo-mark-sky.svg" alt="" width="272" height="312" />
@@ -94,56 +156,124 @@
             <img class="u-layer layer-05" src="./upgo-mark-blue.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-06" src="./upgo-mark-blue.svg" alt="" width="272" height="312" />
             <img class="u-layer layer-07" src="./upgo-mark-blue.svg" alt="" width="272" height="312" />
-          </div></div>
-          <div class="signal-card signal-a"><small>PERFORMANCE</small><strong>Ready to scale</strong></div>
-          <div class="signal-card signal-b"><small>NETWORK</small><strong>VN → SEA</strong></div>
+          </div>
         </div>
-        <div class="process-line" aria-label="Quy trình UPGO"><span>01 <b>FIND OFFERS</b></span><i>→</i><span>02 <b>RUN TRAFFIC</b></span><i>→</i><span>03 <b>SCALE</b></span></div>
-      </section>
+        <div class="signal-card signal-a"><small>PERFORMANCE</small><strong>Ready to scale</strong></div>
+        <div class="signal-card signal-b"><small>NETWORK</small><strong>VN → SEA</strong></div>
+      </div>
+      <div class="process-line" aria-label="Quy trình UPGO"><span>01 <b>FIND OFFERS</b></span><i>→</i><span>02 <b>RUN
+            TRAFFIC</b></span><i>→</i><span>03 <b>SCALE</b></span></div>
+    </section>
 
-      <section class="advantages section-shell" id="advantages">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> LỢI THẾ UPGO</p><h2><span class="heading-line">Bắt đầu không rào cản.</span><br /><em>Scale không giới hạn.</em></h2></div>
-          <p>Từ Offer, tracking đến hỗ trợ vận hành, UPGO tập trung vào những yếu tố giúp Publisher ra quyết định nhanh và phát triển campaign bền vững.</p>
+    <section class="advantages section-shell" id="advantages">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> LỢI THẾ UPGO</p>
+          <h2><span class="heading-line">Bắt đầu không rào cản.</span><br /><em>Scale không giới hạn.</em></h2>
         </div>
-        <div class="advantage-grid">
-          <article><div class="card-top"><span>01</span><b>Reliable</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5h18v11H3zM3 10.5h18M16.5 15h1.5"/><path d="M6 7.5V6a2 2 0 0 1 2-2h8"/></svg></div><h3>Thanh toán linh hoạt, minh bạch</h3><p>Nhiều phương thức thanh toán, quy trình đối soát rõ ràng và lịch payout nhất quán.</p></article>
-          <article><div class="card-top"><span>02</span><b>Performance</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="m15.2 8.8 4.3-4.3M16 4.5h3.5V8"/></svg></div><h3>Offer chọn lọc & độc quyền</h3><p>Ưu tiên Offer có dữ liệu rõ ràng, phù hợp từng nguồn Traffic và mục tiêu campaign.</p></article>
-          <article><div class="card-top"><span>03</span><b>Partnership</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0 1 16 0v1M4 13h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2ZM20 13h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 19c-.8 1.3-2 2-4 2"/></svg></div><h3>Affiliate Manager đồng hành</h3><p>Phản hồi nhanh, tư vấn theo dữ liệu và phối hợp tối ưu trong suốt quá trình chạy.</p></article>
-          <article><div class="card-top"><span>04</span><b>Global</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z"/></svg></div><h3>Am hiểu Việt Nam và khu vực</h3><p>Bắt đầu từ Việt Nam, phát triển năng lực bản địa hóa để tiến ra Đông Nam Á.</p></article>
-          <article><div class="card-top"><span>05</span><b>Scale</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 17 5-5 4 3 7-8M15 7h5v5"/></svg></div><h3>Giải pháp cho volume lớn</h3><p>Linh hoạt xây dựng Offer, funnel và phương án hợp tác phù hợp khả năng scale.</p></article>
-          <article><div class="card-top"><span>06</span><b>Speed</b></div><div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 1.3 4.2a5 5 0 0 0 3.3 3.3L21 12l-4.4 1.5a5 5 0 0 0-3.3 3.3L12 21l-1.3-4.2a5 5 0 0 0-3.3-3.3L3 12l4.4-1.5a5 5 0 0 0 3.3-3.3L12 3Z"/><path d="m19 3 .4 1.2a2 2 0 0 0 1.3 1.3L22 6l-1.3.5a2 2 0 0 0-1.3 1.3L19 9l-.4-1.2a2 2 0 0 0-1.3-1.3L16 6l1.3-.5a2 2 0 0 0 1.3-1.3L19 3Z"/></svg></div><h3>Creative & bản địa hoá</h3><p>Cung cấp định hướng content, landing page và tài nguyên theo từng thị trường.</p></article>
-        </div>
-      </section>
+        <p>Từ Offer, tracking đến hỗ trợ vận hành, UPGO tập trung vào những yếu tố giúp Publisher ra quyết định nhanh và
+          phát triển campaign bền vững.</p>
+      </div>
+      <div class="advantage-grid">
+        <article>
+          <div class="card-top"><span>01</span><b>Reliable</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="M3 7.5h18v11H3zM3 10.5h18M16.5 15h1.5" />
+              <path d="M6 7.5V6a2 2 0 0 1 2-2h8" />
+            </svg></div>
+          <h3>Thanh toán linh hoạt, minh bạch</h3>
+          <p>Nhiều phương thức thanh toán, quy trình đối soát rõ ràng và lịch payout nhất quán.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>02</span><b>Performance</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8.5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <path d="m15.2 8.8 4.3-4.3M16 4.5h3.5V8" />
+            </svg></div>
+          <h3>Offer chọn lọc & độc quyền</h3>
+          <p>Ưu tiên Offer có dữ liệu rõ ràng, phù hợp từng nguồn Traffic và mục tiêu campaign.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>03</span><b>Partnership</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path
+                d="M4 13v-1a8 8 0 0 1 16 0v1M4 13h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2ZM20 13h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2ZM17 19c-.8 1.3-2 2-4 2" />
+            </svg></div>
+          <h3>Affiliate Manager đồng hành</h3>
+          <p>Phản hồi nhanh, tư vấn theo dữ liệu và phối hợp tối ưu trong suốt quá trình chạy.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>04</span><b>Global</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z" />
+            </svg></div>
+          <h3>Am hiểu Việt Nam và khu vực</h3>
+          <p>Bắt đầu từ Việt Nam, phát triển năng lực bản địa hóa để tiến ra Đông Nam Á.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>05</span><b>Scale</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="m4 17 5-5 4 3 7-8M15 7h5v5" />
+            </svg></div>
+          <h3>Giải pháp cho volume lớn</h3>
+          <p>Linh hoạt xây dựng Offer, funnel và phương án hợp tác phù hợp khả năng scale.</p>
+        </article>
+        <article>
+          <div class="card-top"><span>06</span><b>Speed</b></div>
+          <div class="advantage-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path
+                d="m12 3 1.3 4.2a5 5 0 0 0 3.3 3.3L21 12l-4.4 1.5a5 5 0 0 0-3.3 3.3L12 21l-1.3-4.2a5 5 0 0 0-3.3-3.3L3 12l4.4-1.5a5 5 0 0 0 3.3-3.3L12 3Z" />
+              <path
+                d="m19 3 .4 1.2a2 2 0 0 0 1.3 1.3L22 6l-1.3.5a2 2 0 0 0-1.3 1.3L19 9l-.4-1.2a2 2 0 0 0-1.3-1.3L16 6l1.3-.5a2 2 0 0 0 1.3-1.3L19 3Z" />
+            </svg></div>
+          <h3>Creative & bản địa hoá</h3>
+          <p>Cung cấp định hướng content, landing page và tài nguyên theo từng thị trường.</p>
+        </article>
+      </div>
+    </section>
 
-      <section class="offers" id="offers">
-        <div class="section-shell">
-          <div class="section-heading offer-heading">
-            <div><p class="eyebrow light"><span></span> TOP 5 PERFORMING OFFERS</p><h2>Top Offer độc quyền<br />từ <em>UPGO.</em></h2></div>
+    <section class="offers" id="offers">
+      <div class="section-shell">
+        <div class="section-heading offer-heading">
+          <div>
+            <p class="eyebrow light"><span></span> TOP 5 PERFORMING OFFERS</p>
+            <h2>Top Offer độc quyền<br />từ <em>UPGO.</em></h2>
+          </div>
           <p>Top 5 Offer đang được ưu tiên tại Indonesia, Thái Lan và Malaysia.</p>
-          </div>
-          <div class="offer-geo-filter" role="tablist" aria-label="Lọc Offer theo thị trường">
-            <span class="filter-label">KHU VỰC:</span>
-            <button class="geo-btn is-active" data-geo="all">Tất cả (5)</button>
-            <button class="geo-btn" data-geo="Indonesia"><img class="geo-mini-flag" src="./flag-id.svg" alt="" width="18" height="12" /> Indonesia (1)</button>
-            <button class="geo-btn" data-geo="Thái Lan"><img class="geo-mini-flag" src="./flag-th.svg" alt="" width="18" height="12" /> Thái Lan (2)</button>
-            <button class="geo-btn" data-geo="Malaysia"><img class="geo-mini-flag" src="./flag-my.svg" alt="" width="18" height="12" /> Malaysia (2)</button>
-          </div>
-          <div class="offer-carousel">
-            <div class="offer-stage">
-              <div class="offer-image-wrap"><span class="rank-watermark">01</span><img id="offer-image" src="./offer-01.png?v=real-1" alt="Megamove390-id gồm hộp và lọ sản phẩm" /></div>
-              <div class="offer-info">
-                <div class="offer-tags"><span id="offer-category">🦴 XƯƠNG KHỚP</span><span id="offer-rank">TOP 1</span></div>
-                <p class="demo-label">TOP PERFORMING OFFER</p>
-                <div class="offer-title-row">
-                  <h3 id="offer-name">Megamove390-id</h3>
-                  <button class="copy-offer-btn" id="copy-offer" type="button" aria-label="Sao chép tên Offer" title="Sao chép tên Offer">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                    <span>Copy Offer</span>
-                  </button>
-                </div>
-                
-                <!-- Tạm ẩn Mục 6: Metric View Mode Toggle & Traffic Tags
+        </div>
+        <div class="offer-geo-filter" role="tablist" aria-label="Lọc Offer theo thị trường">
+          <span class="filter-label">KHU VỰC:</span>
+          <button class="geo-btn is-active" data-geo="all">Tất cả (5)</button>
+          <button class="geo-btn" data-geo="Indonesia"><img class="geo-mini-flag" src="./flag-id.svg" alt="" width="18"
+              height="12" /> Indonesia (1)</button>
+          <button class="geo-btn" data-geo="Thái Lan"><img class="geo-mini-flag" src="./flag-th.svg" alt="" width="18"
+              height="12" /> Thái Lan (2)</button>
+          <button class="geo-btn" data-geo="Malaysia"><img class="geo-mini-flag" src="./flag-my.svg" alt="" width="18"
+              height="12" /> Malaysia (2)</button>
+        </div>
+        <div class="offer-carousel">
+          <div class="offer-stage">
+            <div class="offer-image-wrap"><span class="rank-watermark">01</span><img id="offer-image"
+                src="./offer-01.png?v=real-1" alt="Megamove390-id gồm hộp và lọ sản phẩm" /></div>
+            <div class="offer-info">
+              <div class="offer-tags"><span id="offer-category">🦴 XƯƠNG KHỚP</span><span id="offer-rank">TOP 1</span>
+              </div>
+              <p class="demo-label">TOP PERFORMING OFFER</p>
+              <div class="offer-title-row">
+                <h3 id="offer-name">Megamove390-id</h3>
+                <button class="copy-offer-btn" id="copy-offer" type="button" aria-label="Sao chép tên Offer"
+                  title="Sao chép tên Offer">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy Offer</span>
+                </button>
+              </div>
+
+              <!-- Tạm ẩn Mục 6: Metric View Mode Toggle & Traffic Tags
                 <div class="offer-submeta">
                   <div class="traffic-tags-row">
                     <span class="submeta-label">TRAFFIC PHÙ HỢP:</span>
@@ -156,21 +286,30 @@
                 </div>
                 -->
 
-                <div class="metrics">
-                  <div><small>PAYOUT</small><strong id="offer-payout">$24–28</strong></div>
-                  <div><small>AR%</small><strong id="offer-ar">30–35%</strong></div>
-                  <div id="metric-cell-3"><small>GEO</small><img id="offer-geo" class="geo-flag" src="./flag-id.svg" alt="Indonesia" width="42" height="28" /></div>
-                </div>
-                <div class="offer-action-group">
-                  <a class="button pending-link" href="#">Start Earn <span>↗</span></a>
-                  <button class="button button-outline-glass open-am-modal" type="button" data-am-context="Offer">Chat với AM về Offer 💬</button>
-                </div>
+              <div class="metrics">
+                <div><small>PAYOUT</small><strong id="offer-payout">$24–28</strong></div>
+                <div><small>AR%</small><strong id="offer-ar">30–35%</strong></div>
+                <div id="metric-cell-3"><small>GEO</small><img id="offer-geo" class="geo-flag" src="./flag-id.svg"
+                    alt="Indonesia" width="42" height="28" /></div>
+              </div>
+              <div class="offer-action-group">
+                <a class="button pending-link" href="#">Start Earn <span>↗</span></a>
+                <button class="button button-outline-glass open-am-modal" type="button" data-am-context="Offer">Chat với
+                  AM về Offer 💬</button>
               </div>
             </div>
-            <div class="carousel-controls"><div class="carousel-tabs" role="tablist" aria-label="Chọn offer"><button class="active" data-index="0">01</button><button data-index="1">02</button><button data-index="2">03</button><button data-index="3">04</button><button data-index="4">05</button></div><div class="progress"><i></i></div><div class="arrows"><button id="prev-offer" aria-label="Offer trước">‹</button><button id="next-offer" aria-label="Offer tiếp theo">›</button></div></div>
           </div>
+          <div class="carousel-controls">
+            <div class="carousel-tabs" role="tablist" aria-label="Chọn offer"><button class="active"
+                data-index="0">01</button><button data-index="1">02</button><button data-index="2">03</button><button
+                data-index="3">04</button><button data-index="4">05</button></div>
+            <div class="progress"><i></i></div>
+            <div class="arrows"><button id="prev-offer" aria-label="Offer trước">‹</button><button id="next-offer"
+                aria-label="Offer tiếp theo">›</button></div>
+          </div>
+        </div>
 
-          <!-- Tạm ẩn Mục 1: Scale & Earnings Calculator
+        <!-- Tạm ẩn Mục 1: Scale & Earnings Calculator
           <div class="scale-calc-card" id="calculator">
             <div class="calc-header">
               <div>
@@ -234,123 +373,175 @@
             </div>
           </div>
           -->
-        </div>
-      </section>
-
-      <section class="insights section-shell" id="insights">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> UPGO INSIGHTS</p><h2>Insight thực chiến.<br /><em>Scale đúng hướng.</em></h2></div>
-          <p>Cập nhật về Offer, Traffic, creative, compliance và cách scale campaign theo từng thị trường.</p>
-        </div>
-        <div class="insight-grid">
-          <article class="insight-card blue"><figure class="insight-thumb"><img src="./insight-offers.png" alt="Kính lúp chọn Offer giữa các thẻ kết nối" width="1536" height="1024" loading="lazy" /></figure><span>OFFER STRATEGY</span><div><small>SẮP RA MẮT</small><h3>Cách chọn Offer phù hợp với nguồn Traffic</h3></div><button disabled>Đang cập nhật</button></article>
-          <article class="insight-card yellow"><figure class="insight-thumb"><img src="./insight-creative.png" alt="Các mẫu quảng cáo và tín hiệu thử nghiệm creative" width="1536" height="1024" loading="lazy" /></figure><span>CREATIVE</span><div><small>SẮP RA MẮT</small><h3>Những tín hiệu cần theo dõi khi test creative</h3></div><button disabled>Đang cập nhật</button></article>
-          <article class="insight-card dark"><figure class="insight-thumb"><img src="./insight-sea.png" alt="Địa cầu với các điểm kết nối mở rộng thị trường" width="1536" height="1024" loading="lazy" /></figure><span>MARKET INSIGHT</span><div><small>SẮP RA MẮT</small><h3>Từ Việt Nam đến SEA: chuẩn bị gì trước khi Scale?</h3></div><button disabled>Đang cập nhật</button></article>
-        </div>
-      </section>
-
-      <section class="final-cta section-shell" id="contact">
-        <div><p class="eyebrow light"><span></span> READY TO MOVE FORWARD?</p><h2>Bứt phá Performance<br />cùng UPGO.</h2><p>Tiếp cận Offer phù hợp, nhận hỗ trợ trực tiếp từ Affiliate Manager và xây nền tảng để scale volume bền vững.</p><div class="hero-actions"><a class="button button-white pending-link" href="#">Bắt đầu ngay <span>↗</span></a><a class="button button-outline-white pending-link" href="#">Nói chuyện với Affiliate Manager</a></div></div>
-        <div class="cta-arrow" aria-hidden="true">↗</div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-main section-shell">
-        <div class="footer-brand"><img src="./upgo-logo-light.svg" alt="UPGO — Move Forward" /><strong>The Network for Scale.</strong><p>Global Affiliate Network</p></div>
-        <div><h3>KHÁM PHÁ</h3><a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn UPGO</a><a href="#insights">Blog</a></div>
-        <div><h3>PHÁP LÝ</h3><a class="pending-link" href="#">Chính sách bảo mật</a><a class="pending-link" href="#">Chính sách Cookie</a><a class="pending-link" href="#">Điều khoản và Điều kiện</a></div>
-        <div><h3>KẾT NỐI</h3><a class="pending-link" href="#">Telegram Support ↗</a><a class="pending-link" href="#">Zalo OA ↗</a><a class="pending-link" href="#">Facebook ↗</a><a class="pending-link" href="#">LinkedIn ↗</a></div>
       </div>
-      <div class="footer-bottom section-shell"><span>© 2026 UPGO. Bảo lưu mọi quyền.</span><span>Move Forward.</span></div>
-    </footer>
-    <!-- Floating AM Assistant Trigger -->
-    <div class="am-float-pill" id="am-float-pill" role="region" aria-label="Hỗ trợ Affiliate Manager trực tiếp">
-      <button class="am-float-btn open-am-modal" type="button" aria-label="Mở kết nối Affiliate Manager UPGO">
-        <span class="am-avatar-wrap">
-          <span class="am-online-dot"></span>
-          <svg class="am-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </span>
-        <span class="am-float-text">
-          <strong>AM Online</strong>
-          <small>Hỗ trợ Offer & Scale</small>
-        </span>
-        <span class="am-badge-ping"></span>
-      </button>
-    </div>
+    </section>
 
-    <!-- Quick AM Telegram / Connect Sheet Modal -->
-    <div class="am-modal-backdrop" id="am-modal-backdrop" aria-hidden="true">
-      <div class="am-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="am-modal-title">
-        <div class="am-modal-header">
-          <div class="am-header-profile">
-            <div class="am-profile-avatar">
-              <span>UP</span>
-              <i class="am-status-online" title="Trực tuyến"></i>
+    <section class="insights section-shell" id="insights">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> UPGO INSIGHTS</p>
+          <h2>Insight thực chiến.<br /><em>Scale đúng hướng.</em></h2>
+        </div>
+        <p>Cập nhật về Offer, Traffic, creative, compliance và cách scale campaign theo từng thị trường.</p>
+      </div>
+      <div class="insight-grid">
+        <article class="insight-card blue">
+          <figure class="insight-thumb"><img src="./insight-offers.png" alt="Kính lúp chọn Offer giữa các thẻ kết nối"
+              width="1536" height="1024" loading="lazy" /></figure><span>OFFER STRATEGY</span>
+          <div><small>SẮP RA MẮT</small>
+            <h3>Cách chọn Offer phù hợp với nguồn Traffic</h3>
+          </div><button disabled>Đang cập nhật</button>
+        </article>
+        <article class="insight-card yellow">
+          <figure class="insight-thumb"><img src="./insight-creative.png"
+              alt="Các mẫu quảng cáo và tín hiệu thử nghiệm creative" width="1536" height="1024" loading="lazy" />
+          </figure><span>CREATIVE</span>
+          <div><small>SẮP RA MẮT</small>
+            <h3>Những tín hiệu cần theo dõi khi test creative</h3>
+          </div><button disabled>Đang cập nhật</button>
+        </article>
+        <article class="insight-card dark">
+          <figure class="insight-thumb"><img src="./insight-sea.png"
+              alt="Địa cầu với các điểm kết nối mở rộng thị trường" width="1536" height="1024" loading="lazy" />
+          </figure><span>MARKET INSIGHT</span>
+          <div><small>SẮP RA MẮT</small>
+            <h3>Từ Việt Nam đến SEA: chuẩn bị gì trước khi Scale?</h3>
+          </div><button disabled>Đang cập nhật</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-cta section-shell" id="contact">
+      <div>
+        <p class="eyebrow light"><span></span> READY TO MOVE FORWARD?</p>
+        <h2>Bứt phá Performance<br />cùng UPGO.</h2>
+        <p>Tiếp cận Offer phù hợp, nhận hỗ trợ trực tiếp từ Affiliate Manager và xây nền tảng để scale volume bền vững.
+        </p>
+        <div class="hero-actions"><a class="button button-white pending-link" href="#">Bắt đầu ngay <span>↗</span></a><a
+            class="button button-outline-white pending-link" href="#">Nói chuyện với Affiliate Manager</a></div>
+      </div>
+      <div class="cta-arrow" aria-hidden="true">↗</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main section-shell">
+      <div class="footer-brand"><img src="./upgo-logo-light.svg" alt="UPGO — Move Forward" /><strong>The Network for
+          Scale.</strong>
+        <p>Global Affiliate Network</p>
+      </div>
+      <div>
+        <h3>KHÁM PHÁ</h3><a href="#about">Về UPGO</a><a href="#offers">Offers</a><a href="#advantages">Vì sao chọn
+          UPGO</a><a href="#insights">Blog</a>
+      </div>
+      <div>
+        <h3>PHÁP LÝ</h3><a class="pending-link" href="#">Chính sách bảo mật</a><a class="pending-link" href="#">Chính
+          sách Cookie</a><a class="pending-link" href="#">Điều khoản và Điều kiện</a>
+      </div>
+      <div>
+        <h3>KẾT NỐI</h3><a class="pending-link" href="#">Telegram Support ↗</a><a class="pending-link" href="#">Zalo OA
+          ↗</a><a class="pending-link" href="#">Facebook ↗</a><a class="pending-link" href="#">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom section-shell"><span>© 2026 UPGO. Bảo lưu mọi quyền.</span><span>Move Forward.</span>
+    </div>
+  </footer>
+  <!-- Floating AM Assistant Trigger -->
+  <div class="am-float-pill" id="am-float-pill" role="region" aria-label="Hỗ trợ Affiliate Manager trực tiếp">
+    <button class="am-float-btn open-am-modal" type="button" aria-label="Mở kết nối Affiliate Manager UPGO">
+      <span class="am-avatar-wrap">
+        <span class="am-online-dot"></span>
+        <svg class="am-icon-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+          </path>
+        </svg>
+      </span>
+      <span class="am-float-text">
+        <strong>AM Online</strong>
+        <small>Hỗ trợ Offer & Scale</small>
+      </span>
+      <span class="am-badge-ping"></span>
+    </button>
+  </div>
+
+  <!-- Quick AM Telegram / Connect Sheet Modal -->
+  <div class="am-modal-backdrop" id="am-modal-backdrop" aria-hidden="true">
+    <div class="am-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="am-modal-title">
+      <div class="am-modal-header">
+        <div class="am-header-profile">
+          <div class="am-profile-avatar">
+            <span>UP</span>
+            <i class="am-status-online" title="Trực tuyến"></i>
+          </div>
+          <div>
+            <h3 id="am-modal-title">UPGO Affiliate Support</h3>
+            <p>Phản hồi trong 3–5 phút • 1-on-1 AM</p>
+          </div>
+        </div>
+        <button class="am-close-btn" id="am-modal-close" type="button" aria-label="Đóng bảng hỗ trợ">✕</button>
+      </div>
+      <div class="am-modal-body">
+        <p class="am-modal-intro">Bạn đang cần tư vấn duyệt Offer, test traffic hay tăng payout limit?</p>
+        <div class="am-quick-options">
+          <a class="am-option-link pending-link" href="#">
+            <div class="am-option-icon tg-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.93-1.28 4.88-2.12 5.86-2.54 2.79-1.16 3.37-1.36 3.75-1.36.08 0 .28.02.4.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+              </svg>
             </div>
-            <div>
-              <h3 id="am-modal-title">UPGO Affiliate Support</h3>
-              <p>Phản hồi trong 3–5 phút • 1-on-1 AM</p>
+            <div class="am-option-info">
+              <strong>Chat trực tiếp Telegram AM</strong>
+              <span>Kênh hỗ trợ chính thức (Đang cập nhật)</span>
+            </div>
+            <span class="am-arrow">↗</span>
+          </a>
+
+          <div class="am-copy-box">
+            <span class="am-copy-label">Telegram Support:</span>
+            <div class="am-copy-row">
+              <code>Đang cập nhật...</code>
+              <button class="copy-handle-btn" id="copy-tg-handle" type="button" data-copy="">Chờ công bố</button>
             </div>
           </div>
-          <button class="am-close-btn" id="am-modal-close" type="button" aria-label="Đóng bảng hỗ trợ">✕</button>
-        </div>
-        <div class="am-modal-body">
-          <p class="am-modal-intro">Bạn đang cần tư vấn duyệt Offer, test traffic hay tăng payout limit?</p>
-          <div class="am-quick-options">
-            <a class="am-option-link pending-link" href="#">
-              <div class="am-option-icon tg-icon">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.93-1.28 4.88-2.12 5.86-2.54 2.79-1.16 3.37-1.36 3.75-1.36.08 0 .28.02.4.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-              </div>
-              <div class="am-option-info">
-                <strong>Chat trực tiếp Telegram AM</strong>
-                <span>Kênh hỗ trợ chính thức (Đang cập nhật)</span>
-              </div>
-              <span class="am-arrow">↗</span>
-            </a>
 
-            <div class="am-copy-box">
-              <span class="am-copy-label">Telegram Support:</span>
-              <div class="am-copy-row">
-                <code>Đang cập nhật...</code>
-                <button class="copy-handle-btn" id="copy-tg-handle" type="button" data-copy="">Chờ công bố</button>
-              </div>
-            </div>
-
-            <div class="am-topics">
-              <span class="am-topics-label">Chủ đề hỗ trợ sẽ mở:</span>
-              <div class="am-topic-pills">
-                <button class="topic-pill pending-link" type="button">📑 Top Offer SEA</button>
-                <button class="topic-pill pending-link" type="button">🎯 Nguồn Traffic</button>
-                <button class="topic-pill pending-link" type="button">💳 Chính sách Payout</button>
-              </div>
+          <div class="am-topics">
+            <span class="am-topics-label">Chủ đề hỗ trợ sẽ mở:</span>
+            <div class="am-topic-pills">
+              <button class="topic-pill pending-link" type="button">📑 Top Offer SEA</button>
+              <button class="topic-pill pending-link" type="button">🎯 Nguồn Traffic</button>
+              <button class="topic-pill pending-link" type="button">💳 Chính sách Payout</button>
             </div>
           </div>
         </div>
-        <div class="am-modal-footer">
-          <span>UPGO Network • Đảm bảo bảo mật thông tin</span>
-        </div>
+      </div>
+      <div class="am-modal-footer">
+        <span>UPGO Network • Đảm bảo bảo mật thông tin</span>
       </div>
     </div>
+  </div>
 
-    <!-- Feature 5: Live Activity Social Proof Toast -->
-    <div class="live-activity-card" id="live-activity-card" aria-live="polite">
-      <div class="activity-pulse-icon">
-        <span class="activity-ring"></span>
-        <span class="activity-dot">⚡</span>
-      </div>
-      <div class="activity-content">
-        <div class="activity-title-row">
-          <strong id="activity-title">Publisher vừa kích hoạt Offer</strong>
-          <span class="activity-time" id="activity-time">Vừa xong</span>
-        </div>
-        <p class="activity-desc" id="activity-desc">Megamove390-id • Payout $28 • <strong>+1,200 leads</strong></p>
-      </div>
-      <button class="activity-close" id="activity-close" type="button" aria-label="Đóng thông báo">✕</button>
+  <!-- Feature 5: Live Activity Social Proof Toast -->
+  <div class="live-activity-card" id="live-activity-card" aria-live="polite">
+    <div class="activity-pulse-icon">
+      <span class="activity-ring"></span>
+      <span class="activity-dot">⚡</span>
     </div>
+    <div class="activity-content">
+      <div class="activity-title-row">
+        <strong id="activity-title">Publisher vừa kích hoạt Offer</strong>
+        <span class="activity-time" id="activity-time">Vừa xong</span>
+      </div>
+      <p class="activity-desc" id="activity-desc">Megamove390-id • Payout $28 • <strong>+1,200 leads</strong></p>
+    </div>
+    <button class="activity-close" id="activity-close" type="button" aria-label="Đóng thông báo">✕</button>
+  </div>
 
-    <div class="toast" role="status" aria-live="polite">Liên kết sẽ được cập nhật trước khi phát hành.</div>
-    <script src="./script.js?v=adv-tilt-off"></script>
-    <script src="./motion.js?v=adv-tilt-off"></script>
-  </body>
+  <div class="toast" role="status" aria-live="polite">Liên kết sẽ được cập nhật trước khi phát hành.</div>
+  <script src="./script.js?v=theme-toggle"></script>
+  <script src="./motion.js?v=theme-toggle"></script>
+</body>
+
 </html>
